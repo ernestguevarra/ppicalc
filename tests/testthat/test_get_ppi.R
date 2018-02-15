@@ -1,7 +1,7 @@
 context("Test get_ppi")
 
 library(washdata)
-library(ppitables)
+devtools::install_github("validmeasures/ppitables")
 
 x <- get_ppi(index = 65, ccode = "BGD")
 
