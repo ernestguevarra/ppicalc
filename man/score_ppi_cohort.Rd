@@ -6,6 +6,23 @@
 \usage{
 score_ppi_cohort(data, ccode)
 }
+\arguments{
+\item{data}{A data frame containing responses to the 10 questions used to
+elicit information for calculating the PPI score}
+
+\item{ccode}{Three letter ISO code for a country}
+}
+\value{
+A numeric vector of PPI scores for each household
+}
 \description{
 score_ppi_cohort
+}
+\examples{
+
+
+
+
+
+
 }
