@@ -19,10 +19,9 @@ A numeric vector of PPI scores for each household
 score_ppi_cohort
 }
 \examples{
-
-
-
-
-
+#
+\dontrun{
+score_ppi_cohort(data = surveyDataBGD, ccode = "BGD")
+}
 
 }
