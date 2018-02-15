@@ -7,11 +7,10 @@
 #' @param ccode Three letter ISO code for a country
 #' @return A numeric vector of PPI scores for each household
 #' @examples
-#'
-#'
-#'
-#'
-#'
+#' #
+#' \dontrun{
+#' score_ppi_cohort(data = surveyDataBGD, ccode = "BGD")
+#' }
 #'
 #' @export
 #'
