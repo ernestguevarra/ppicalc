@@ -25,9 +25,12 @@
 
 get_ppi <- function(index, ccode) {
 
-  if(is.na(index) | is.na(ccode)) {
-    cat("PPI score and/or country code is NA. Returning NA")
-    return(NA)
+  if(is.na(index) | is.null(index)) {
+    stop("PPI score required. Try again.", call. = TRUE)
+  }
+
+  if(is.na(ccode) | is.null(ccode)) {
+    stop("Country code required. Try again.", call. = TRUE)
   }
 
   ppiData <- get(paste("ppiMatrix", ccode, sep = ""))
