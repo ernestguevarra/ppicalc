@@ -18,3 +18,4 @@ BugReports: https://github.com/validmeasures/ppir/issues
 Imports: washdata
 RoxygenNote: 6.0.1
 Suggests: testthat
+Remotes: validmeasures/ppitables
