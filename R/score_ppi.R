@@ -296,7 +296,94 @@ score_ppi <- function(ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
+  # Check country - Madagascar
   #
+  if(ccode == "MDG") {
+    #
+    # ppi1: How many members does the household have?
+    #
+    q1 <- menu(title = "How many members does the household have?",
+               choices = c("Nine or more", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two", "One"))
+    ppi1 <- ifelse(q1 == 1, 0,
+              ifelse(q1 == 2, 5,
+                ifelse(q1 == 3, 6,
+                  ifelse(q1 == 4, 9,
+                    ifelse(q1 == 5, 13,
+                      ifelse(q1 == 6, 19,
+                        ifelse(q1 == 7, 25,
+                          ifelse(q1 == 8, 33, 38))))))))
+    #
+    # ppi2: Can the (oldest) female head/spouse read a simple message?
+    #
+    q2 <- menu(title = "Can the (oldest) female head/spouse read a simple message?",
+               choices = c("No", "Yes", "No female head/spouse"))
+    ppi2 <- ifelse(q2 == 1, 0,
+              ifelse(q2 == 2, 2, 3))
+    #
+    # ppi3: What is the main material of the floor of the residence?
+    #
+    q3 <- menu(title = "What is the main material of the floor of the residence?",
+               choices = c("Other", "Dirt (with or without mats)",
+                           "Wood, stone, or brick",
+                           "Cement, concrete, or fiberglass"))
+    ppi3 <- ifelse(q3 == 1, 0,
+              ifelse(q3 == 2, 5,
+                ifelse(q3 == 3, 8, 11)))
+    #
+    # ppi4: What is the main permanent ceiling material?
+    #
+    q4 <- menu(title = "What is the main permanent ceiling material?",
+               choices = c("Bark, leaves, stems, dirt, or mud",
+                           "No ceiling, or other",
+                           "Matting, wood planks, plywood, particle board, cinder blocks, cement, concrete, or fiberglass"))
+    ppi4 <- ifelse(q4 == 1, 0,
+              ifelse(q4 == 2, 3, 7))
+    #
+    # ppi5: How many tables does the household have?
+    #
+    q5 <- menu(title = "How many tables does the household have?",
+               choices = c("None", "One", "Two or more"))
+    ppi5 <- ifelse(q5 == 1, 0,
+              ifelse(q5 == 2, 2, 6))
+    #
+    # ppi6: How many beds does the household have?
+    #
+    q6 <- menu(title = "How many beds does the household have?",
+               choices = c("None", "One", "Two", "Three or more"))
+    ppi6 <- ifelse(q6 == 1, 0,
+              ifelse(q6 == 2, 2,
+                ifelse(q6 == 3, 4, 9)))
+    #
+    # ppi7: Does the household have a radio, radio/cassette player, or hi-fi stereo system?
+    #
+    q7 <- menu(title = "Does the household have a radio, radio/cassette player, or hi-fi stereo system?",
+               choices = c("No", "Yes"))
+    ppi7 <- ifelse(q7 == 1, 0, 5)
+    #
+    # ppi8: Does the household have a television?
+    #
+    q8 <- menu(title = "Does the household have a television?",
+               choices = c("No", "Yes"))
+    ppi8 <- ifelse(q8 == 1, 0, 14)
+    #
+    # ppi9: Does the household have a bicycle, motorcycle/scooter, tractor, or car of its own (not counting business vehicles)?
+    #
+    q9 <- menu(title = "Does the household have a bicycle, motorcycle/scooter, tractor, or car of its own (not counting business vehicles)?",
+               choices = c("No", "Yes"))
+    ppi9 <- ifelse(q9 == 1, 0, 4)
+    #
+    # ppi10: Does the household have an agricultural storage shed?
+    #
+    q10 <- menu(title = "Does the household have an agricultural storage shed?",
+                choices = c("No", "Yes"))
+    ppi10 <- ifelse(q10 == 1, 0, 3)
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Return score
   #
   if(!is.na(ppi)){ return(ppi) }
 }
