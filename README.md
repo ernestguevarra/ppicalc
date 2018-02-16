@@ -13,6 +13,7 @@ public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus
 Status](https://travis-ci.org/validmeasures/ppir.svg?branch=master)](https://travis-ci.org/validmeasures/ppir)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/ppir?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/ppir)
+[![codecov](https://codecov.io/gh/validmeasures/ppir/branch/master/graph/badge.svg)](https://codecov.io/gh/validmeasures/ppir)
 
 The goal of ppir is to …
 
