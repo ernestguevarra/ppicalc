@@ -14,9 +14,7 @@
 #'
 #' @examples
 #' # Apply function on a household in Bangladesh (BGD) with a PPI score of 65
-#' \dontrun{
 #' get_ppi(index = 65, ccode = "BGD")
-#' }
 #'
 #' @export
 #'
