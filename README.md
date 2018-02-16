@@ -16,11 +16,11 @@ Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/ppir?br
 [![codecov](https://codecov.io/gh/validmeasures/ppir/branch/master/graph/badge.svg)](https://codecov.io/gh/validmeasures/ppir)
 
 Given `Poverty Probability Index (PPI)` scores based on the standard 10
-questions on household’s chdaracteristics and asset ownership, the
+questions on household’s characteristics and asset ownership, the
 likelihood that the household is living below the poverty line can be
 determined using this package. This package depends on country-specific
-lookup tables developed for the `PPI` available via the ppitables
-package.
+lookup tables developed for the `PPI` available via the [`ppitables`
+package](https://github.com/validmeasures/ppitables).
 
 ## Installation
 

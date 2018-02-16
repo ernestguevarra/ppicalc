@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/ppir?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/ppir)
 [![codecov](https://codecov.io/gh/validmeasures/ppir/branch/master/graph/badge.svg)](https://codecov.io/gh/validmeasures/ppir)
 
-Given `Poverty Probability Index (PPI)` scores based on the standard 10 questions on household’s chdaracteristics and asset ownership, the likelihood that the household is living below the poverty line can be determined using this package. This package depends on country-specific lookup tables developed for the `PPI` available via the ppitables package.
+Given `Poverty Probability Index (PPI)` scores based on the standard 10 questions on household’s characteristics and asset ownership, the likelihood that the household is living below the poverty line can be determined using this package. This package depends on country-specific lookup tables developed for the `PPI` available via the [`ppitables` package](https://github.com/validmeasures/ppitables).
 
 ## Installation
 
