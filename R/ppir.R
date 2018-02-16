@@ -13,6 +13,7 @@
 #' @docType package
 #' @name ppir
 #' @importFrom utils menu
+#' @import ppitables
 #'
 #
 ################################################################################
