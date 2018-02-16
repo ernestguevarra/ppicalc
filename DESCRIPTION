@@ -15,7 +15,8 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/validmeasures/ppir
 BugReports: https://github.com/validmeasures/ppir/issues
-Imports: washdata
+Imports: washdata,
+    ppitables
 RoxygenNote: 6.0.1
 Suggests: testthat
 Remotes: github::validmeasures/ppitables
