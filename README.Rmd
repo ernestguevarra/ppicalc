@@ -21,18 +21,18 @@ knitr::opts_chunk$set(
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/ppir?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/ppir)
 [![codecov](https://codecov.io/gh/validmeasures/ppir/branch/master/graph/badge.svg)](https://codecov.io/gh/validmeasures/ppir)
 
-The goal of ppir is to ...
+Given `Poverty Probability Index (PPI)` scores based on the standard 10 questions on household’s chdaracteristics and asset ownership, the likelihood that the household is living below the poverty line can be determined using this package. This package depends on country-specific lookup tables developed for the `PPI` available via the ppitables package.
 
 ## Installation
 
-You can install ppir from github with:
+You can install `ppir` from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("validmeasures/ppir")
 ```
 
-## Example
+## Usage
 
 This is a basic example which shows you how to solve a common problem:
 
