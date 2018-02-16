@@ -20,7 +20,7 @@
 
 score_ppi <- function(ccode) {
   #
-  # Check country
+  # Check country - BGD
   #
   if(ccode == "BGD") {
     #
@@ -194,9 +194,102 @@ score_ppi <- function(ccode) {
                 or out) 51 or more decimals of cultivable agricultural \
                 land (excluding uncultivable land and dwelling-house/homestead
                 land)?",
-                choices = c("None", "Only bicycle", "Motor cycle or car (regardless of bicycle)"))
+                choices = c("None", "Only bicycle",
+                            "Motor cycle or car (regardless of bicycle)"))
     ppi10 <- ifelse(q10 == 1, 0,
                ifelse(q10 == 2, 3, 8))
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check country - Kenya
+  #
+  if(ccode == "Kenya") {
+    #
+    # ppi1: How many members does the household have?
+    #
+    q1 <- menu(title = "How many members does the household have?",
+               choices = c("Nine or more", "Seven or eight", "Six", "Five",
+                           "Four", "Three", "One or two"))
+    ppi1 <- ifelse(q1 == 1, 0,
+              ifelse(q1 == 2, 5,
+                ifelse(q1 == 3, 8,
+                  ifelse(q1 == 4, 12,
+                    ifelse(q1 == 5, 18,
+                      ifelse(q1 == 6, 22, 32))))))
+    #
+    # ppi2: What is the highest school grade that the female head/spouse has completed?
+    #
+    q2 <- menu(title = "What is the highest school grade that the female head/spouse has completed?",
+               choices = c("None, or pre-school", "Primary standards 1 to 6", "Primary standard 7",
+                           "Primary standard 8, or secondary forms 1 to 3", "No female head/spouse",
+                           "Secondary form 4 or higher"))
+    ppi2 <- ifelse(q2 == 1, 0,
+              ifelse(q2 == 2, 1,
+                ifelse(q2 == 3, 2,
+                  ifelse(q2 %in% 4:5, 6, 11))))
+    #
+    # ppi3: What kind of business (type of industry) is the main occupation of the male head/spouse connected with?
+    #
+    q3 <- menu(title = "What kind of business (type of industry) is the main occupation of the male head/spouse connected with?",
+               choices = c("Does not work", "No male head/spouse",
+                           "Agriculture, hunting, forestry, fishing, mining, or quarrying",
+                           "Any other"))
+    ppi3 <- ifelse(q3 == 1, 0,
+              ifelse(q3 == 2, 3,
+                ifelse(q3 == 3, 7, 9)))
+    #
+    # ppi4: How many habitable rooms does this household occupy in its main dwelling (do not count bathrooms, toilets, storerooms, or garage)?
+    #
+    q4 <- menu(title = "How many habitable rooms does this household occupy in its main dwelling (do not count bathrooms, toilets, storerooms, or garage)?",
+               choices = c("One", "Two", "Three", "Four or more"))
+    ppi4 <- ifelse(q4 == 1, 0,
+              ifelse(q4 == 2, 2,
+                ifelse(q4 == 3, 5, 8)))
+    #
+    # ppi5: The floor of the main dwelling is predominantly made of what material?
+    #
+    q5 <- menu(title = "The floor of the main dwelling is predominantly made of what material?",
+               choices = c("Wood, earth, or other", "Cement or tiles"))
+    ppi5 <- ifelse(q5 == 1, 0, 3)
+    #
+    # ppi6: What is the main source of lighting fuel for the household?
+    #
+    q6 <- menu(title = "What is the main source of lighting fuel for the household?",
+               choices = c("Collected firewood, purchased firewood, grass, or dry cell (torch)",
+                           "Paraffin, candles, biogas, or other",
+                           "Electricity, solar, or gas"))
+    ppi6 <- ifelse(q6 == 1, 0,
+              ifelse(q6 == 2, 6, 12))
+    #
+    # ppi7: Does your household own any irons (charcoal or electric)?
+    #
+    q7 <- menu(title = "Does your household own any irons (charcoal or electric)?",
+               choices = c("No", "Yes"))
+    ppi7 <- ifelse(q7 == 1, 0, 4)
+    #
+    # ppi8: How many mosquito nets does your household own?
+    #
+    q8 <- menu(title = "How many mosquito nets does your household own?",
+               choices = c("None", "One", "Two ore more"))
+    ppi8 <- ifelse(q8 == 1, 0,
+              ifelse(q8 == 2, 2, 4))
+    #
+    # ppi9: How many towels does your household own?
+    #
+    q9 <- menu(title = "How many towels does your household own?",
+               choices = c("None", "One", "Two or more"))
+    ppi9 <- ifelse(q9 == 1, 0,
+              ifelse(q9 == 2, 6, 10))
+    #
+    # ppi10: How many frying pans does your household own?
+    #
+    q10 <- menu(title = "How many frying pans does your household own?",
+                choices = c("None", "One", "Two or more"))
+    ppi10 <- ifelse(q10 == 1, 0,
+               ifelse(q10 == 2, 3, 7))
     #
     # ppi: total score
     #
