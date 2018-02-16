@@ -3,6 +3,12 @@
 
 # ppir
 
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![CRAN](https://img.shields.io/cran/v/ppir.svg)](https://CRAN.R-project.org/package=ppir)
+[![CRAN](https://img.shields.io/cran/l/ppir.svg)](https://github.com/validmeasures/ppir/blob/master/LICENSE.md)
+[![CRAN](http://cranlogs.r-pkg.org/badges/ppir)](https://CRAN.R-project.org/package=ppir)
 [![Travis-CI Build
 Status](https://travis-ci.org/validmeasures/ppir.svg?branch=master)](https://travis-ci.org/validmeasures/ppir)
 [![AppVeyor Build
