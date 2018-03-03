@@ -155,8 +155,8 @@ score_ppi_cohort <- function(data, ccode) {
     # ppi1: Number of household members 12-years old or younger
     #
     ppi1 <- ifelse(data$ppi1 == "None", 32,
-                   ifelse(data$ppi1 == "One", 16,
-                          ifelse(data$ppi1 == "Two", 10, 0)))
+              ifelse(data$ppi1 == "One", 16,
+                ifelse(data$ppi1 == "Two", 10, 0)))
     #
     # ppi2: Do household members 6-12 years old attend school?
     #
@@ -169,12 +169,12 @@ score_ppi_cohort <- function(data, ccode) {
     # ppi4: Number of rooms used by household
     #
     ppi4 <- ifelse(data$ppi4 == "Three or more", 5,
-                   ifelse(data$ppi4 == "Two", 3, 0))
+              ifelse(data$ppi4 == "Two", 3, 0))
     #
     # ppi5: Main construction material of the walls of the main room
     #
     ppi5 <- ifelse(data$ppi5 == "Brick/cement", 9,
-                   ifelse(data$ppi5 == "Mud brick, or C.I. sheet/wood", 2, 0))
+              ifelse(data$ppi5 == "Mud brick, or C.I. sheet/wood", 2, 0))
     #
     # ppi6: Does the household own television?
     #
@@ -183,12 +183,12 @@ score_ppi_cohort <- function(data, ccode) {
     # ppi7: Number of fans the household owns
     #
     ppi7 <- ifelse(data$ppi7 == "Two or more", 7,
-                   ifelse(data$ppi7 == "One", 4, 0))
+              ifelse(data$ppi7 == "One", 4, 0))
     #
     # ppi8: Number of mobile phones the household owns
     #
     ppi8 <- ifelse(data$ppi8 == "Two or more", 15,
-                   ifelse(data$ppi8 == "One", 8, 0))
+              ifelse(data$ppi8 == "One", 8, 0))
     #
     # ppi9: Does household own bicycles, motorcycles/scooters, cars?
     #
@@ -273,6 +273,55 @@ score_ppi_cohort <- function(data, ccode) {
   # Check if country is Bolivia
   #
   if(ccode == "BOL") {
+    #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 23,
+              ifelse(data$ppi1 == "Two", 20,
+                ifelse(data$ppi1 == "Three", 14,
+                  ifelse(data$ppi1 == "Four", 9, 0))))
+    #
+    # ppi2: Male work for at least one hour
+    #
+    ppi2 <- ifelse(data$ppi2 == "Yes", 10,
+              ifelse(data$ppi2 == "No", 0, 6))
+    #
+    # ppi3: Mother tongue of the female head/spouse
+    #
+    ppi3 <- ifelse(data$ppi3 == "No female head/spouse", 10,
+              ifelse(data$ppi3 == "Spanish", 6, 0))
+    #
+    # ppi4: How many rooms
+    #
+    ppi4 <- ifelse(data$ppi4 == "Five or more", 7,
+              ifelse(data$ppi4 == "Four", 5,
+                ifelse(data$ppi4 == "Three", 2, 0)))
+    #
+    # ppi5: Material of floors
+    #
+    ppi5 <- ifelse(data$ppi5 == "Dirt, or other", 0,
+              ifelse(data$ppi5 == "Bricks, or cement", 5, 11))
+    #
+    # ppi6: Toilet arrangements
+    #
+    ppi6 <- ifelse(data$ppi6 == "None/bush/field", 0, 5)
+    #
+    # ppi7: Main fuel for cooking
+    #
+    ppi7 <- ifelse(data$ppi7 == "Piped-in natural gas, electricity, or does not cook", 12,
+              ifelse(data$ppi7 == "LPG from a cylinder", 7, 0))
+    #
+    # ppi8: Refrigerator or freezer
+    #
+    ppi8 <- ifelse(data$ppi8 == "Yes", 7, 0)
+    #
+    # ppi9: Television
+    #
+    ppi9 <- ifelse(data$ppi9 == "Yes", 9, 0)
+    #
+    # ppi10: Motorcyle or automobile
+    #
+    ppi10 <- ifelse(data$ppi10 == "Yes", 6, 0)
     #
     # ppi: total score
     #
