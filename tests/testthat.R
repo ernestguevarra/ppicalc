@@ -1,4 +1,4 @@
 library(testthat)
-library(ppir)
+library(ppicalc)
 
-test_check("ppir")
+test_check("ppicalc")
