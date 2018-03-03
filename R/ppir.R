@@ -1,6 +1,6 @@
 ################################################################################
 #
-#' ppir
+#' ppicalc
 #'
 #' The Poverty Probability Index (PPI) is a poverty measurement tool
 #' for organizations and businesses with a mission to serve the poor. The PPI
@@ -11,7 +11,7 @@
 #' lookup tables developed for the PPI available via the \code{ppitables} package.
 #'
 #' @docType package
-#' @name ppir
+#' @name ppicalc
 #' @importFrom utils menu
 #' @importFrom stats quantile
 #'
