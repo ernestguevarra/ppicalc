@@ -1,6 +1,6 @@
-Package: ppir
+Package: ppicalc
 Type: Package
-Title: Determining Poverty Likelihood Based on the Povert Probability Index (PPI) 
+Title: Calculator for Determining Poverty Likelihood Based on the Povert Probability Index (PPI) 
 Version: 0.1.0
 Authors@R: c(
     person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), email = "ernestgmd@gmail.com", role = c("aut", "cre", "cph")),
@@ -13,8 +13,8 @@ Description: Given Poverty Probability Index (PPI) scores based on the standard
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/validmeasures/ppir
-BugReports: https://github.com/validmeasures/ppir/issues
+URL: https://github.com/validmeasures/ppicalc
+BugReports: https://github.com/validmeasures/ppicalc/issues
 Imports: washdata,
     ppitables
 RoxygenNote: 6.0.1
