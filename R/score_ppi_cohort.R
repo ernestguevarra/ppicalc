@@ -20,6 +20,62 @@
 
 score_ppi_cohort <- function(data, ccode) {
   #
+  # Check if country is Afghanistan
+  #
+  if(ccode == "AFG") {
+    #
+    # ppi1: Number of household members 16-years old or younger
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 29,
+              ifelse(data$ppi1 == "One", 23,
+                ifelse(data$ppi1 == "Two", 17,
+                  ifelse(data$ppi1 == "Three", 12,
+                    ifelse(data$ppi1 == "Four", 9,
+                      ifelse(data$ppi1 == "Five or six", 4, 12))))))
+    #
+    # ppi2: Both male and female head of household can dread and write
+    #
+    ppi2 <- ifelse(data$ppi2 == "Yes", 11,
+              ifelse(data$ppi2 == "No", 5,
+                ifelse(data$ppi2 == "No female head/spouse", 5, 0)))
+    #
+    # ppi3: Type of dwelling
+    #
+    ppi3 <- ifelse(data$ppi3 == "Single-family house", 3, 0)
+    #
+    # ppi4: How many rooms
+    #
+    ppi4 <- ifelse(data$ppi4 == "Five or more", 4, 0)
+    #
+    # ppi5: Toilet facility
+    #
+    ppi5 <- ifelse(data$ppi5 == "Improved latrine, or flush latrine", 11,
+              ifelse(data$ppi5 == "Traditional covered latrine", 6,
+                ifelse(data$ppi5 == "Open pit", 5, 0)))
+    #
+    # ppi6: Main source of cooking fuel
+    #
+    ppi6 <- ifelse(data$ppi6 == "Crop residues, firewood, charcoal/coal, kerosene or oil, gas, or electricity", 4, 0)
+    #
+    # ppi7: How many stoves/gas cylinders
+    #
+    ppi7 <- ifelse(data$ppi7 == "Two or more", 9,
+              ifelse(data$ppi7 == "One", 1, 0))
+    #
+    # ppi8: Own sewing machines
+    #
+    ppi8 <- ifelse(data$ppi8 == "Yes", 3, 0)
+    #
+    # ppi9: Own motorcycles or cars
+    #
+    ppi9 <- ifelse(data$ppi9 == "Car (regardless of motorcyle)", 22,
+              ifelse(data$ppi9 == "Motorcycle only", 12, 0))
+    #
+    # ppi10: Own/access to irrigated land
+    #
+    ppi10 <- ifelse(data$ppi10 == "Yes", 4, 0)
+  }
+  #
   # Check if country is Bangladesh
   #
   if(ccode == "BGD") {
