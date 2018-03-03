@@ -332,6 +332,61 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "BRA") {
     #
+    # ppi1: Members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 20,
+              ifelse(data$ppi1 == "Two", 17,
+                ifelse(data$ppi1 == "Three", 11,
+                  ifelse(data$ppi1 == "Four", 6, 0))))
+    #
+    # ppi2: children go to school
+    #
+    ppi2 <- ifelse(data$ppi2 == "No", 0,
+              ifelse(data$ppi2 == "Yes", 5, 7))
+    #
+    # ppi3: Years of schooling of femal head/spouse
+    #
+    ppi3 <- ifelse(data$ppi3 == "Three or less", 0,
+              ifelse(data$ppi3 == "Four to eleven", 2, 8))
+    #
+    # ppi4: Employees
+    #
+    ppi4 <- ifelse(data$ppi4 == "None", 0,
+              ifelse(data$ppi4 == "One", 4, 13))
+    #
+    # ppi5: Managers
+    #
+    ppi5 <- ifelse(data$ppi5 == "None", 0, 8)
+    #
+    # ppi6: Rooms
+    #
+    ppi6 <- ifelse(data$ppi6 == "Eight or more", 11,
+              ifelse(data$ppi6 == "Seven", 7,
+                ifelse(data$ppi6 == "Six", 5,
+                  ifelse(data$ppi6 == "Five", 2, 0))))
+    #
+    # ppi7: Sewage disposal
+    #
+    ppi7 <- ifelse(data$ppi7 == "Direct connection to public sewage/rainwater system", 5,
+              ifelse(data$ppi7 == "Septic tank connected to public sewage/rainwater system", 4,
+                ifelse(data$ppi7 == "Septic tank not connected to public sewage/rainwater system", 3,
+                  ifelse(data$ppi7 == "Simple hole, or directly into river, lake, or ocean", 2, 0))))
+    #
+    # ppi8: Refrigerator
+    #
+    ppi8 <- ifelse(data$ppi8 == "Yes, with two doors", 10,
+              ifelse(data$ppi8 == "Yes, with one door", 5, 0))
+    #
+    # ppi9: Washing machine
+    #
+    ppi9 <- ifelse(data$ppi9 == "Yes", 7, 0)
+    #
+    # ppi10: Cellular or land-line telephone
+    #
+    ppi10 <- ifelse(data$ppi10 == "Both", 11,
+               ifelse(data$ppi10 == "Land-line but not cellular", 6,
+                 ifelse(data$ppi10 == "Cellular but not land-line", 5, 0)))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
