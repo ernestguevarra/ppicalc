@@ -2,6 +2,7 @@
 
 export(get_ppi)
 export(get_ppi_cohort)
+export(get_ppi_quintile)
 export(score_ppi)
 export(score_ppi_cohort)
 importFrom(utils,menu)
