@@ -4,17 +4,13 @@
 \alias{get_ppi_cohort}
 \title{get_ppi_cohort}
 \usage{
-get_ppi_cohort(data = NULL, index, ccode)
+get_ppi_cohort(index, ppiTable)
 }
 \arguments{
-\item{data}{A data frame that contains data on PPI scores.}
+\item{index}{The households' PPI score of class numeric.}
 
-\item{index}{The households' PPI score of class numeric (default). If \code{data}
-parameter is provided, then \code{index} should be a character value
-indicating the variable name in \code{data} containing the households'
-PPI score.}
-
-\item{ccode}{Three letter ISO country code}
+\item{ppiTable}{Name of country PPI table to use from the \code{ppitables}
+package}
 }
 \value{
 A data frame of households' poverty probabilities based on various poverty
@@ -29,16 +25,16 @@ lookup tables for 60 countries available via the \code{ppitables} package.
 # Apply function on a dataset from Bangladesh that includes PPI scores from
 # the washdata package
 \dontrun{
-get_ppi_cohort(data = indicatorsDataBGD,
+get_ppi_cohort(data = washdata::indicatorsDataBGD,
                index = "ppi",
-               ccode = "BGD")
+               ppiTable = ppiBGD2013)
 }
 
 # Apply function on a dataset from Bangladesh but specifying vector for PPI
 # and keeping data as NULL
-\dontrun{
-get_ppi_cohort(index = indicatorsDataBGD$ppi,
-               ccode = "BGD")
-}
+#\dontrun{
+get_ppi_cohort(index = washdata::indicatorsDataBGD$ppi,
+               ppiTable = ppitables::ppiBGD2013)
+#}
 
 }

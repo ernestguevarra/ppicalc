@@ -4,12 +4,13 @@
 \alias{get_ppi}
 \title{get_ppi}
 \usage{
-get_ppi(index, ccode)
+get_ppi(index, ppiTable)
 }
 \arguments{
 \item{index}{The household's PPI score}
 
-\item{ccode}{Three letter ISO country code}
+\item{ppiTable}{Name of country PPI table to use from the \code{ppitables}
+package}
 }
 \value{
 A vector of household's poverty probabilities based on various poverty
@@ -22,8 +23,8 @@ available via the \code{ppitables} package.
 }
 \examples{
 # Apply function on a household in Bangladesh (BGD) with a PPI score of 65
-\dontrun{
-get_ppi(index = 65, ccode = "BGD")
-}
+#\dontrun{
+get_ppi(index = 65, ppiTable = ppitables::ppiBGD2013)
+#}
 
 }
