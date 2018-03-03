@@ -74,12 +74,78 @@ score_ppi_cohort <- function(data, ccode) {
     # ppi10: Own/access to irrigated land
     #
     ppi10 <- ifelse(data$ppi10 == "Yes", 4, 0)
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Angola
   #
   if(ccode == "AGO") {
-
+    #
+    # ppi1: What province?
+    #
+    ppi1 <- ifelse(data$ppi1 == "Moxico, Cunene, Zaire, or Cabinda", 19,
+              ifelse(data$ppi1 == "Namibe, Bengo, or Kwanza Sul", 16,
+                ifelse(data$ppi1 == "Uige, or Kuando Kubango", 12,
+                  ifelse(data$ppi1 == "Huila, or Luanda", 10,
+                    ifelse(data$ppi1 == "Lunda Sul, or Lunda Norte", 9,
+                      ifelse(data$ppi1 == "Kwanza Norte, Huambo, or Bie", 5, 0))))))
+    #
+    # ppi2: How many household members
+    #
+    ppi2 <- ifelse(data$ppi2 == "One", 100,
+              ifelse(data$ppi2 == "Two", 31,
+                ifelse(data$ppi2 == "Three", 26,
+                  ifelse(data$ppi2 == "Four", 21,
+                    ifelse(data$ppi2 == "Five", 16,
+                      ifelse(data$ppi2 == "Six", 11,
+                        ifelse(data$ppi2 == "Seven", 9,
+                          ifelse(data$ppi2 == "Eight", 5, 0))))))))
+    #
+    # ppi3: Work for someone else
+    #
+    ppi3 <- ifelse(data$ppi3 == "Yes", 3, 0)
+    #
+    # ppi4: Male head/spouse know how to read and write
+    #
+    ppi4 <- ifelse(data$ppi4 == "Yes", 2,
+              ifelse(data$ppi4 == "No male head/spouse", 1, 0))
+    #
+    # ppi5: Female head/spouse know how to read and write
+    #
+    ppi5 <- ifelse(data$ppi5 == "Yes", 5,
+              ifelse(data$ppi5 == "No", 2, 0))
+    #
+    # ppi6: Material of the floor of the residence
+    #
+    ppi6 <- ifelse(data$ppi6 == "Cement, wood or parquet, marble, granite, brick, or other", 5, 0)
+    #
+    # ppi7: Main type of cooking fuel
+    #
+    ppi7 <- ifelse(data$ppi7 == "LPG, electricity, or does not cook", 100,
+              ifelse(data$ppi7 == "Kerosene, or charcoal", 5, 0))
+    #
+    # ppi8: Number of beds
+    #
+    ppi8 <- ifelse(data$ppi8 == "Two or more", 7,
+              ifelse(data$ppi8 == "One", 3, 0))
+    #
+    # ppi9: Black and white or colour television
+    #
+    ppi9 <- ifelse(data$ppi9 == "Yes, color (regardless of black-and-white)", 9,
+              ifelse(data$ppi9 == "Yes, only black-and-white", 6, 0))
+    #
+    # ppi10: Bicycle, motorcycle/scooter or car in good working order
+    #
+    ppi10 <- ifelse(data$ppi10 == "Two or more motorcycles, or a car (regardless of bicycle)", 13,
+               ifelse(data$ppi10 == "One motorcycle, but no car (regardless of bicycle)", 6,
+                 ifelse(data$ppi10 == "Only bicycle", 5, 0)))
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Bangladesh
@@ -141,67 +207,157 @@ score_ppi_cohort <- function(data, ccode) {
   # Check if country is Benin
   #
   if(ccode == "BEN") {
-
+    #
+    # ppi1: Department
+    #
+    ppi1 <- ifelse(data$ppi1 == "Atakora", 14,
+              ifelse(data$ppi1 == "Alibori", 13,
+                ifelse(data$ppi1 == "Donga, or Borgou", 12,
+                  ifelse(data$ppi1 == "Oueme", 11,
+                    ifelse(data$ppi1 == "Plateau", 7,
+                      ifelse(data$ppi1 == "Couffo", 4,
+                        ifelse(data$ppi1 == "Zou, Atlantique, or Collines", 3,
+                          ifelse(data$ppi1 == "Mono", 1, 0))))))))
+    #
+    # ppi2: Material for exterior walls
+    #
+    ppi2 <- ifelse(data$ppi2 == "Bricks", 4,
+              ifelse(data$ppi2 == "Mud plastered with cement", 1, 0))
+    #
+    # ppi3: Household members
+    #
+    ppi3 <- ifelse(data$ppi3 == "One", 48,
+              ifelse(data$ppi3 == "Two", 40,
+                ifelse(data$ppi3 == "Three", 30,
+                  ifelse(data$ppi3 == "Four", 20,
+                    ifelse(data$ppi3 == "Five", 14,
+                      ifelse(data$ppi3 == "Six", 10,
+                        ifelse(data$ppi3 == "Seven", 6, 0)))))))
+    #
+    # ppi4: Female head/spouse know how to read and write with understanding in French
+    #
+    ppi4 <- ifelse(data$ppi4 %in% c("There is no female head/spouse", "Yes"), 3, 0)
+    #
+    # ppi5: Main source of energy for lighting in household
+    #
+    ppi5 <- ifelse(data$ppi5 == "Kerosene", 0, 4)
+    #
+    # ppi6: How many rooms for sleeping
+    #
+    ppi6 <- ifelse(data$ppi6 == "Three or more", 5,
+              ifelse(data$ppi6 == "Two", 2, 0))
+    #
+    # ppi7: Main cooking fuel
+    #
+    ppi7 <- ifelse(data$ppi7 == "Firewood, or straw", 0, 3)
+    #
+    # ppi8: Motorcycle, scooter, or automobile
+    #
+    ppi8 <- ifelse(data$ppi8 == "Yes", 5, 0)
+    #
+    # ppi9: Number of mobile telephones
+    #
+    ppi9 <- ifelse(data$ppi9 == "Two or more", 9,
+              ifelse(data$ppi9 == "One", 2, 0))
+    #
+    # ppi10: Land ownership
+    #
+    ppi10 <- ifelse(data$ppi10 == "Does own etc., and some land is sub-divided, developed, or irrigated", 5,
+               ifelse(data$ppi10 == "Does own etc., but land is not sub-divided, developed, or irrigated", 2, 0))
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Bolivia
   #
   if(ccode == "BOL") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Brazil
   #
   if(ccode == "BRA") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Burkina Faso
   #
   if(ccode == "BFA") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Cambodia
   #
   if(ccode == "KHM") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Cameroon
   #
   if(ccode == "CMR") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Colombia
   #
   if(ccode == "COL") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Dominican Republic
   #
   if(ccode == "DOM") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Ecuador
   #
   if(ccode == "ECU") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Egypt
   #
   if(ccode == "EGY") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is El Salvador
   #
   if(ccode == "SLV") {
-
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
   # Check if country is Ghana
