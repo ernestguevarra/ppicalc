@@ -6,12 +6,9 @@
 #' household's Poverty Probability Index (PPI) score. This function uses PPI
 #' lookup tables for 60 countries available via the \code{ppitables} package.
 #'
-#' @param data A data frame that contains data on PPI scores.
-#' @param index The households' PPI score of class numeric (default). If \code{data}
-#'     parameter is provided, then \code{index} should be a character value
-#'     indicating the variable name in \code{data} containing the households'
-#'     PPI score.
-#' @param ccode Three letter ISO country code
+#' @param index The households' PPI score of class numeric.
+#' @param ppiTable Name of country PPI table to use from the \code{ppitables}
+#'     package
 #'
 #' @return A data frame of households' poverty probabilities based on various poverty
 #'     metrics
@@ -20,60 +17,52 @@
 #' # Apply function on a dataset from Bangladesh that includes PPI scores from
 #' # the washdata package
 #' \dontrun{
-#' get_ppi_cohort(data = indicatorsDataBGD,
+#' get_ppi_cohort(data = washdata::indicatorsDataBGD,
 #'                index = "ppi",
-#'                ccode = "BGD")
+#'                ppiTable = ppiBGD2013)
 #' }
 #'
 #' # Apply function on a dataset from Bangladesh but specifying vector for PPI
 #' # and keeping data as NULL
-#' \dontrun{
-#' get_ppi_cohort(index = indicatorsDataBGD$ppi,
-#'                ccode = "BGD")
-#' }
+#' #\dontrun{
+#' get_ppi_cohort(index = washdata::indicatorsDataBGD$ppi,
+#'                ppiTable = ppitables::ppiBGD2013)
+#' #}
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_ppi_cohort <- function(data = NULL, index, ccode) {
+get_ppi_cohort <- function(index, ppiTable) {
 
-  if(is.null(data)) {
-
-    if(class(index) != "numeric") {
-      stop("Index is not numeric. If data is not provided, index must be numeric. Try again.", call. = TRUE)
-    }
-
-    ppi <- mapply(FUN = get_ppi,
-                  index = index,
-                  ccode = ccode)
-
-    ppiDF <- data.frame(matrix(data = unlist(ppi),
-                        nrow = length(index),
-                        ncol = ncol(get(paste("ppiMatrix", ccode, sep = ""))),
-                        byrow = TRUE))
-
-    names(ppiDF) <- names(get(paste("ppiMatrix", ccode, sep = "")))
+  if(class(index) != "numeric") {
+    stop("Index is not numeric. If data is not provided, index must be numeric. Try again.", call. = TRUE)
   }
-
-  if(!is.null(data)) {
-
-    if(class(index) != "character") {
-      stop("If data is provided, index must be a character value indicating the variable name for PPI score in data. Try again.", call. = TRUE)
-    }
-
-    ppi <- mapply(FUN = get_ppi,
-                  index = data[ , index],
-                  ccode = ccode)
-
-    ppiDF <- data.frame(matrix(data = unlist(ppi),
-                               nrow = nrow(data),
-                               ncol = ncol(get(paste("ppiMatrix", ccode, sep = ""))),
-                               byrow = TRUE))
-
-    names(ppiDF) <- names(get(paste("ppiMatrix", ccode, sep = "")))
+  #
+  # Create concatenating object
+  #
+  ppiDF <- NULL
+  #
+  # Cycle through each row of index
+  #
+  for(i in 1:length(index)) {
+    #
+    # get_ppi for current index
+    #
+    ppi <- get_ppi(index = index[i], ppiTable = ppiTable)
+    #
+    # concatenate ppi
+    #
+    ppiDF <- data.frame(rbind(ppiDF, ppi))
   }
+  #
+  # Rename rows
+  #
+  row.names(ppiDF) <- 1:nrow(ppiDF)
+  #
+  # return output
+  #
   return(ppiDF)
 }
 

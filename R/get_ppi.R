@@ -7,35 +7,33 @@
 #' available via the \code{ppitables} package.
 #'
 #' @param index The household's PPI score
-#' @param ccode Three letter ISO country code
+#' @param ppiTable Name of country PPI table to use from the \code{ppitables}
+#'     package
 #'
 #' @return A vector of household's poverty probabilities based on various poverty
 #'     metrics
 #'
 #' @examples
 #' # Apply function on a household in Bangladesh (BGD) with a PPI score of 65
-#' \dontrun{
-#' get_ppi(index = 65, ccode = "BGD")
-#' }
+#' #\dontrun{
+#' get_ppi(index = 65, ppiTable = ppitables::ppiBGD2013)
+#' #}
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_ppi <- function(index, ccode) {
+get_ppi <- function(index, ppiTable) {
 
-  if(is.na(index) | is.null(index)) {
+  if(is.null(index)) {
     stop("PPI score required. Try again.", call. = TRUE)
   }
 
-  if(is.na(ccode) | is.null(ccode)) {
-    stop("Country code required. Try again.", call. = TRUE)
+  if(is.null(ppiTable)) {
+    stop("Country PPI table required. Try again.", call. = TRUE)
   }
 
-  ppiData <- get(paste("ppiMatrix", ccode, sep = ""))
-
-  ppi <- subset(ppiData, score == index)
-
+  ppi <- ppiTable[ppiTable[["score"]] == index, ]
   return(ppi)
 }
