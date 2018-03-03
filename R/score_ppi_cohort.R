@@ -76,6 +76,12 @@ score_ppi_cohort <- function(data, ccode) {
     ppi10 <- ifelse(data$ppi10 == "Yes", 4, 0)
   }
   #
+  # Check if country is Angola
+  #
+  if(ccode == "AGO") {
+
+  }
+  #
   # Check if country is Bangladesh
   #
   if(ccode == "BGD") {
@@ -130,6 +136,72 @@ score_ppi_cohort <- function(data, ccode) {
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Benin
+  #
+  if(ccode == "BEN") {
+
+  }
+  #
+  # Check if country is Bolivia
+  #
+  if(ccode == "BOL") {
+
+  }
+  #
+  # Check if country is Brazil
+  #
+  if(ccode == "BRA") {
+
+  }
+  #
+  # Check if country is Burkina Faso
+  #
+  if(ccode == "BFA") {
+
+  }
+  #
+  # Check if country is Cambodia
+  #
+  if(ccode == "KHM") {
+
+  }
+  #
+  # Check if country is Cameroon
+  #
+  if(ccode == "CMR") {
+
+  }
+  #
+  # Check if country is Colombia
+  #
+  if(ccode == "COL") {
+
+  }
+  #
+  # Check if country is Dominican Republic
+  #
+  if(ccode == "DOM") {
+
+  }
+  #
+  # Check if country is Ecuador
+  #
+  if(ccode == "ECU") {
+
+  }
+  #
+  # Check if country is Egypt
+  #
+  if(ccode == "EGY") {
+
+  }
+  #
+  # Check if country is El Salvador
+  #
+  if(ccode == "SLV") {
+
   }
   #
   # Check if country is Ghana
