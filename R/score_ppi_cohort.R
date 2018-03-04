@@ -396,6 +396,61 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "BFA") {
     #
+    # ppi1: Region
+    #
+    ppi1 <- ifelse(data$ppi1 == "Centre", 16,
+              ifelse(data$ppi1 == "Sahel", 15,
+                ifelse(data$ppi1 %in% c("Sud Ouest", "Centre Sude"), 11,
+                  ifelse(data$ppi1 == "Centre Nord", 10,
+                    ifelse(data$ppi1 %in% c("Est", "Centre Est"), 9,
+                      ifelse(data@ppi1 == "Plateau Central", 8,
+                        ifelse(data$ppi1 == "Cascade", 6,
+                          ifelse(data$ppi1 == "Centre Ouest", 5,
+                            ifelse(data$ppi1 == "Hauts Bassins", 3, 0)))))))))
+    #
+    # ppi2: Household members
+    #
+    ppi2 <- ifelse(data$ppi2 == "4 or less", 20,
+              ifelse(data$ppi2 == "5 to 6", 13,
+                ifelse(data$ppi2 == "7 to 8", 9, 0)))
+    #
+    # ppi3: Male head/spouse can read and write
+    #
+    ppi3 <- ifelse(data$ppi3 == "Yes", 5, 0)
+    #
+    # ppi4: child going to school
+    #
+    ppi4 <- ifelse(data$ppi4 == "Every child aged 7 to 14 attended formal school during the last school year", 5,
+              ifelse(data$ppi4 == "No child aged 7 to 14", 7, 0))
+    #
+    # ppi5: Material to construct floor
+    #
+    ppi5 <- ifelse(data$ppi5 == "Sand Blasted", 7,
+              ifelse(data$ppi5 == "Cement Screed", 5,
+                ifelse(data$ppi5 == "Tile", 8, 0)))
+    #
+    # ppi6: Main source of lighting
+    #
+    ppi6 <- ifelse(data$ppi6 == "Battery Torch", 0,
+              ifelse(data$ppi6 == "Network Electricity", 12,
+                ifelse(data$ppi6 == "Solar Energy", 5, 4)))
+    #
+    # ppi7: Own car
+    #
+    ppi7 <- ifelse(data$ppi7 == "Yes", 10, 0)
+    #
+    # ppi8: Own mattress
+    #
+    ppi8 <- ifelse(data$ppi8 == "Yes", 6, 0)
+    #
+    # ppi9: Consumed milk and/or dairy
+    #
+    ppi9 <- ifelse(data$ppi9 == "Yes", 9, 0)
+    #
+    # ppi10: Consumed sugar
+    #
+    ppi10 <- ifelse(data$ppi10 == "Yes", 7, 0)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
@@ -404,6 +459,60 @@ score_ppi_cohort <- function(data, ccode) {
   # Check if country is Cambodia
   #
   if(ccode == "KHM") {
+    #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "Eight or more", 0,
+              ifelse(data$ppi1 == "Seven", 7,
+                ifelse(data$ppi1 == "Six", 9,
+                  ifelse(data$ppi1 == "Five", 17,
+                    ifelse(data$ppi1 == "Four", 22,
+                      ifelse(data$ppi1 == "Three", 32, 40))))))
+    #
+    # ppi2: Work
+    #
+    ppi2 <- ifelse(data$ppi2 == "None or one", 0,
+              ifelse(data$ppi2 == "Two", 3, 5))
+    #
+    # ppi3: Female head/spouse read or write a simple message in any language
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0,
+              ifelse(data$ppi3 == "Yes", 2, 1))
+    #
+    # ppi4: Rooms
+    #
+    ppi4 <- ifelse(data$ppi4 == "One", 0,
+              ifelse(data$ppi4 == "Two", 5, 12))
+    #
+    # ppi5: Wall material
+    #
+    ppi5 <- ifelse(data$ppi5 == "Concrete, brick, or stone", 4,
+              ifelse(data$ppi5 == "Wood, logs, plywood, galvanized iron or aluminium or other metal sheets, or fibrous cement/asbestos", 3, 0))
+    #
+    # ppi6: Roof material
+    #
+    ppi6 <- ifelse(data$ppi6 == "Tiles, fibrous cement, or concrete", 4,
+              ifelse(data$ppi6 == "Galvanized iron or aluminium, or mixed but predominantly galvanized iron/aluminium/tiles/fibrous cement", 1, 0))
+    #
+    # ppi7: Wardrobes or cabinets
+    #
+    ppi7 <- ifelse(data$ppi7 == "None", 0,
+              ifelse(data$ppi7 == "One", 6, 8))
+    #
+    # ppi8: TV, video/VCD/DVD player
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0,
+              ifelse(data$ppi8 == "Only television", 3, 6))
+    #
+    # ppi9: Phones
+    #
+    ppi9 <- ifelse(data$ppi9 == "None", 0,
+              ifelse(data$ppi9 == "One", 4, 9))
+    #
+    # ppi10: Motorcycles or motorboats
+    #
+    ppi10 <- ifelse(data$ppi10 == "None", 0,
+               ifelse(data$ppi10 == "One", 6, 10))
     #
     # ppi: total score
     #
