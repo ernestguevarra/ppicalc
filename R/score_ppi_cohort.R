@@ -770,6 +770,57 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "EGY") {
     #
+    # ppi1: household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One or two", 36,
+              ifelse(data$ppi1 == "Three", 19,
+                ifelse(data$ppi1 == "Four", 18,
+                  ifelse(data$ppi1 == "Five", 11,
+                    ifelse(data$ppi1 == "Six", 5, 0)))))
+    #
+    # ppi2: Attend school
+    #
+    ppi2 <- ifelse(data$ppi2 == "No", 0,
+              ifelse(data$ppi2 == "Yes", 2, 4))
+    #
+    # ppi3: Female head/spouse read and write
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0,
+              ifelse(data$ppi3 == "Yes", 7, 4))
+    #
+    # ppi4: non-permanent wage jobs
+    #
+    ppi4 <- ifelse(data$ppi4 == "Yes", 0, 7)
+    #
+    # ppi5: Walls material
+    #
+    ppi5 <- ifelse(data$ppi5 == "Concrete", 6,
+              ifelse(data$ppi5 == "Bricks with mortar", 4, 0))
+    #
+    # ppi6: Rooms
+    #
+    ppi6 <- ifelse(data$ppi6 == "One", 0,
+              ifelse(data$ppi6 == "Two", 1,
+                ifelse(data$ppi6 == "Three", 2, 8)))
+    #
+    # ppi7: Source of water
+    #
+    ppi7 <- ifelse(data$ppi7 == "Public network with tap inside building", 4, 0)
+    #
+    # ppi8: toilet
+    #
+    ppi8 <- ifelse(data$ppi8 == "Private flush toilet", 7,
+              ifelse(data$ppi8 == "Private non-flush toilet", 2, 0))
+    #
+    # ppi9: Gas or electric water heaters
+    #
+    ppi9 <- ifelse(data$ppi9 == "Yes", 6, 0)
+    #
+    # ppi10: washing machine
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0,
+               ifelse(data$ppi10 == "Yes, only non-automatic", 4, 15))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
