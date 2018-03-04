@@ -835,6 +835,24 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
+  # Check if country is Ethiopia
+  #
+  if(ccode == "ETH") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Fiji
+  #
+  if(ccode == "FJI") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
   # Check if country is Ghana
   #
   if(ccode == "GHA") {
