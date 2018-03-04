@@ -889,6 +889,48 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "ETH") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 47,
+              ifelse(data$ppi1 == "Two", 38,
+                ifelse(data$ppi1 == "Three", 25,
+                  ifelse(data$ppi1 == "Four", 18,
+                    ifelse(data$ppi1 == "Five", 11,
+                      ifelse(data$ppi1 == "Six", 7, 0))))))
+    #
+    # ppi2: Male head/spouse read and write?
+    #
+    ppi2 <- ifelse(data$ppi2 == "Yes", 6,
+              ifelse(data$ppi2 == "No", 2, 0))
+    #
+    # ppi3: Female head/spouse read and write
+    #
+    ppi3 <- ifelse(data$ppi3 == "Yes", 12,
+              ifelse(data$ppi3 == "No", 5, 0))
+    #
+    # ppi4: Fuel for cooking
+    #
+    ppi4 <- ifelse(data$ppi4 == "Firewood, charcoal, or crop residue/leaves", 0,
+              ifelse(data$ppi4 == "Dung/manure", 4, 9))
+    #
+    # ppi5: Matresses or beds
+    #
+    ppi5 <- ifelse(data$ppi5 == "Yes", 5, 0)
+    #
+    # ppi6: Radios/radio-and-tape players/tape players
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0, 7)
+    #
+    # ppi7: Gabi
+    #
+    ppi7 <- ifelse(data$ppi7 == "None", 0,
+              ifelse(data$pp7 == "One", 3, 6))
+    #
+    # ppi8: Plows
+    #
+    ppi8 <- ifelse(data$ppi8 == "Does not farm", 0,
+              ifelse(data$ppi8 == "Farms, but does not have plows", 6, 8))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
@@ -897,6 +939,61 @@ score_ppi_cohort <- function(data, ccode) {
   # Check if country is Fiji
   #
   if(ccode == "FJI") {
+    #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One or two", 29,
+              ifelse(data$ppi1 == "Three", 20,
+                ifelse(data$ppi1 == "Four", 15,
+                  ifelse(data$ppi1 == "Five", 12,
+                    ifelse(data$ppi1 == "Six", 8,
+                      ifelse(data$ppi1 == "Seven", 5, 0))))))
+    #
+    # ppi2: Work
+    #
+    ppi2 <- ifelse(data$ppi2 == "None", 0,
+              ifelse(data$ppi2 == "One", 7,
+                ifelse(data$ppi2 == "Two", 12, 17)))
+    #
+    # ppi3: Male work for money
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0,
+              ifelse(data$ppi3 == "Yes", 2, 7))
+    #
+    # ppi4: Female work for money
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0,
+              ifelse(data$ppi4 == "Yes", 4, 2))
+    #
+    # ppi5: Male education
+    #
+    ppi5 <- ifelse(data$ppi5 == "None, kindergarten, primary Class 1 to 3, special education, or not recognized", 0,
+              ifelse(data$ppi5 == "No male head/spouse", 0,
+                ifelse(data$ppi5 == "Primary class 4 to 6, or secondary form 1 to 3", 4,
+                  ifelse(data$ppi5 == "Secondary form 4", 7,
+                    ifelse(data$ppi5 == "Secondary form 5 or 6", 11, 19)))))
+    #
+    # ppi6: Wall material
+    #
+    ppi6 <- ifelse(data$ppi6 == "Concrete, brick, or cement", 6,
+              ifelse(data$ppi6 == "Wood", 1, 0))
+    #
+    # ppi7: Gas/electric stoves available for use
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 3)
+    #
+    # ppi8: Fuel for cooking
+    #
+    ppi8 <- ifelse(data$ppi8 == "Wood", 0,
+              ifelse(data$ppi8 == "Kerosene", 1, 6))
+    #
+    # ppi9: Washing machine
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 4)
+    #
+    # ppi10: videos/TV
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 5)
     #
     # ppi: total score
     #
