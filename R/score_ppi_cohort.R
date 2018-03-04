@@ -830,6 +830,56 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "SLV") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 27,
+              ifelse(data$ppi1 == "One", 19,
+                ifelse(data$ppi1 == "Two", 10,
+                  ifelse(data$ppi1 == "Three", 5, 0))))
+    #
+    # ppi2: Rooms
+    #
+    ppi2 <- ifelse(data$ppi2 == "One", 0,
+              ifelse(data$ppi2 == "Two", 3,
+                ifelse(data$ppi2 == "Three", 4,
+                  ifelse(data$ppi2 == "Four", 12, 15))))
+    #
+    # ppi3: Salaried employees
+    #
+    ppi3 <- ifelse(data$ppi3 == "None", 0,
+              ifelse(data$ppi3 == "One", 7, 18))
+    #
+    # ppi4: Female head/spouse working
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0,
+              ifelse(data$ppi4 == "Yes", 8, 10))
+    #
+    # ppi5: Fuel for cooking
+    #
+    ppi5 <- ifelse(data$ppi5 == "Firewood, charcoal, kerosene, or other", 0, 7)
+    #
+    # ppi6: Refrigerator
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0, 4)
+    #
+    # ppi7: Blender
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 3)
+    #
+    # ppi8: Television, VCR or DVD
+    #
+    ppi8 <- ifelse(data$ppi8 == "None", 0,
+              ifelse(data$ppi8 == "Only a television, or a VCR or DVD", 1, 6))
+    #
+    # ppi9: Radio or stereo system
+    #
+    ppi9 <- ifelse(data$ppi9 == "None", 0,
+              ifelse(data$ppi9 == "Only a radio, or only a stereo system", 1, 4))
+    #
+    # ppi10: Fan
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 6)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
