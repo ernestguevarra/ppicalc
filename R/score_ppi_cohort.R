@@ -707,6 +707,60 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "ECU") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 40,
+              ifelse(data$ppi1 == "Two", 32,
+                ifelse(data$ppi1 == "Three", 25,
+                  ifelse(data$ppi1 == "Four", 16,
+                    ifelse(data$ppi1 == "Five", 9, 0)))))
+    #
+    # ppi2: Household members with mobile phone
+    #
+    ppi2 <- ifelse(data$ppi2 == "None", 0,
+              ifelse(data$ppi2 == "One", 3,
+                ifelse(data$ppi2 == "Two", 7, 11)))
+    #
+    # ppi3: Car, air conditioner, video camera or exercise machine
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0, 100)
+    #
+    # ppi4: Floor material
+    #
+    ppi4 <- ifelse(data$ppi4 == "Dirt", 0,
+              ifelse(data$ppi4 == "Untreated planks, reeds or other", 4,
+                ifelse(data$ppi4 == "Cement/bricks", 5, 8)))
+    #
+    # ppi5: Running water
+    #
+    ppi5 <- ifelse(data$ppi5 == "No", 0 , 3)
+    #
+    # ppi6: Bathroom inside residence
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0, 4)
+    #
+    # ppi7: Blender, waffle iron/sandwhich grill, electric mixer
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0,
+              ifelse(data$pp7 == "Only blender", 3, 8))
+    #
+    # ppi8: Iron
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 5)
+    #
+    # ppi9: color, plasma/LCD/LED televisions
+    #
+    ppi9 <- ifelse(data$ppi9 == "None", 0,
+              ifelse(data$ppi9 == "One", 5, 10))
+    #
+    # ppi10: light bulbs
+    #
+    ppi10 <- ifelse(data$ppi10 == "None, one or two", 0,
+               ifelse(data$ppi10 == "Three", 1,
+                 ifelse(data$ppi10 == "Four", 2,
+                   ifelse(data$ppi10 == "Five", 4,
+                     ifelse(data$ppi10 == "Six or seven", 6, 10)))))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
