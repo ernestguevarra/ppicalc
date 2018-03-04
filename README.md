@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ppicalc: Calculator for Determining Poverty Likelihood Based on the Povert Probability Index (PPI)
+# ppicalc: Calculator for Determining Poverty Likelihood Based on the Poverty Probability Index (PPI)
 
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the

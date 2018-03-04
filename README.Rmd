@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ppicalc: Calculator for Determining Poverty Likelihood Based on the Povert Probability Index (PPI)
+# ppicalc: Calculator for Determining Poverty Likelihood Based on the Poverty Probability Index (PPI)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![CRAN](https://img.shields.io/cran/v/ppicalc.svg)](https://CRAN.R-project.org/package=ppicalc)
 [![CRAN](https://img.shields.io/cran/l/ppicalc.svg)](https://github.com/validmeasures/ppicalc/blob/master/LICENSE.md)
