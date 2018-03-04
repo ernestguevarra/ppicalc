@@ -523,6 +523,57 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "CMR") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One or two", 29,
+              ifelse(data$ppi1 == "Three", 20,
+                ifelse(data$ppi1 == "Four", 16,
+                  ifelse(data$ppi1 == "Five", 12,
+                    ifelse(data$ppi1 == "Six", 10, 0)))))
+    #
+    # ppi2: School
+    #
+    ppi2 <- ifelse(data$ppi2 == "No", 0,
+              ifelse(data$ppi2 == "Yes", 2, 7))
+    #
+    # ppi3: Work
+    #
+    ppi3 <- ifelse(data$ppi3 == "Yes", 0, 2)
+    #
+    # ppi4: Male head/spouse read and write a simple sentence in French or English
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0,
+              ifelse(data$ppi4 %in% c("Only English", "Only French"), 2, 3))
+    #
+    # ppi5: Female head/spouse read and write a simple sentence in French or English
+    #
+    ppi5 <- ifelse(data$ppi5 == "No", 0,
+              ifelse(data$ppi5 == "No female head/spouse", 2,
+                ifelse(data$ppi5 == "Only English", 4,
+                  ifelse(data$ppi5 == "Only French", 6, 8))))
+    #
+    # ppi6: Floor material
+    #
+    ppi6 <- ifelse(data$ppi6 == "Dirt, or other", 0, 6)
+    #
+    # ppi7: Fuel for cooking
+    #
+    ppi7 <- ifelse(data$ppi7 == "LPG", 19,
+              ifelse(data$ppi7 == "Collected/gifted firewood, or other", 0, 9))
+    #
+    # ppi8: Electric iron
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 6)
+    #
+    # ppi9: Radio or television
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0,
+              ifelse(data$ppi9 == "Only radio", 7, 14))
+    #
+    # ppi10: Buffet or wardrobe
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 6)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
@@ -532,6 +583,59 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "COL") {
     #
+    # ppi1: Household members 18 and younger
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 23,
+              ifelse(data$ppi1 == "One", 17,
+                ifelse(data$ppi1 == "Two", 11,
+                  ifelse(data$ppi1 == "Three", 5, 0))))
+    #
+    # ppi2: Female education
+    #
+    ppi2 <- ifelse(data$ppi2 == "None, or pre-school", 0,
+              ifelse(data$ppi2 == "Primary or middle school", 3,
+                ifelse(data$ppi2 == "High School", 6,
+                  ifelse(data$ppi2 == "No female head/spouse", 8,
+                    ifelse(data$ppi2 == "Post-secondary or college (1 to 4 years)", 9, 17)))))
+    #
+    # ppi3: Household members working
+    #
+    ppi3 <- ifelse(data$ppi3 == "None", 0,
+              ifelse(data$ppi3 == "One", 9, 14))
+    #
+    # ppi4: Work as wage or salary employees
+    #
+    ppi4 <- ifelse(data$ppi4 == "None", 0,
+              ifelse(data$ppi4 == "One", 4, 11))
+    #
+    # ppi5: Rate class for electricity
+    #
+    ppi5 <- ifelse(data$ppi5 == "Four, five, or six", 9,
+              ifelse(data$ppi5 == "Three", 4, 0))
+    #
+    # ppi6: Fuel for cooking
+    #
+    ppi6 <- ifelse(data$ppi6 == "Does not cook", 6,
+              ifelse(data$ppi6 == "Natural gas from a public network", 3,
+                ifelse(data$ppi6 == "LPG from a cylinder or tank", 2, 0)))
+    #
+    # ppi7: Washing machine
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 4)
+    #
+    # ppi8: Refrigerator or freezer
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 3)
+    #
+    # ppi9: working DVD
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 4)
+    #
+    # ppi10: Motorcycle or car
+    #
+    ppi10 <- ifelse(data$ppi10 == "None", 0,
+               ifelse(data$ppi10 == "Motorcycle only", 3, 9))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
@@ -540,6 +644,59 @@ score_ppi_cohort <- function(data, ccode) {
   # Check if country is Dominican Republic
   #
   if(ccode == "DOM") {
+    #
+    # ppi1: Household members 16 years or younger
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 12,
+              ifelse(data$ppi1 == "One", 11,
+                ifelse(data$ppi1 == "Two", 7,
+                  ifelse(data$ppi1 == "Three", 3, 0))))
+    #
+    # ppi2: Female head education
+    #
+    ppi2 <- ifelse(data$ppi2 == "None, or up to first grade", 0,
+              ifelse(data$ppi2 == "Second to fifth grade", 2,
+                ifelse(data$ppi2 == "Sixth or seventh grade", 3,
+                  ifelse(data$ppi2 %in% c("Eight to twelfth grade", "There is no female head/spouse"), 5,
+                    ifelse(data$ppi2 == "One to three years of post-secondary school or college", 7, 10)))))
+    #
+    # ppi3: Attend private school
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0, 4)
+    #
+    # ppi4: Business
+    #
+    ppi4 <- ifelse(data$ppi4 == "None", 22,
+              ifelse(data$ppi4 == "One", 19,
+                ifelse(data$ppi4 == "Two", 11,
+                  ifelse(data$ppi4 == "Three", 7,
+                    ifelse(data$ppi4 == "Four", 6, 0)))))
+    #
+    # ppi5: Roof material
+    #
+    ppi5 <- ifelse(data$ppi5 == "Reinforced concrete", 3, 0)
+    #
+    # ppi6: toilet
+    #
+    ppi6 <- ifelse(data$ppi6 == "Private flush toilet", 4, 0)
+    #
+    # ppi7: Water meter
+    #
+    ppi7 <- ifelse(data$ppi7 == "Yes", 8, 0)
+    #
+    # ppi8: Fuel for cooking
+    #
+    ppi8 <- ifelse(data$ppi8 == "Does not cook", 13,
+              ifelse(data$ppi8 == "Electricity or propane", 8, 0))
+    #
+    # ppi9: Motorcycle, car, SUV or pick-up
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0,
+              ifelse(data$pp9 == "Motorcyle only", 5, 17))
+    #
+    # ppi10: VCR or DVD
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 7)
     #
     # ppi: total score
     #
