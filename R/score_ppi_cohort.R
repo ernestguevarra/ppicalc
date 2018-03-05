@@ -1070,6 +1070,57 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "GTM") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 45,
+              ifelse(data$ppi1 == "Two", 35,
+                ifelse(data$ppi1 == "Three", 28,
+                  ifelse(data$ppi1 == "Four", 19,
+                    ifelse(data$ppi1 == "Five", 15,
+                      ifelse(data$ppi1 == "Six", 11,
+                        ifelse(data$ppi1 == "Seven", 6, 0)))))))
+    #
+    # ppi2: Rooms
+    #
+    ppi2 <- ifelse(data$ppi2 == "One", 0,
+              ifelse(data$ppi2 == "Two", 4,
+                ifelse(data$ppi3 == "Three", 7, 10)))
+    #
+    # ppi3: Toilet
+    #
+    ppi3 <- ifelse(data$ppi3 == "Latrine, covered pit, or none", 0, 3)
+    #
+    # ppi4: Stove
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0, 4)
+    #
+    # ppi5: Refrigerator
+    #
+    ppi5 <- ifelse(data$ppi5 == "No", 0, 3)
+    #
+    # ppi6: Blender
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0 , 3)
+    #
+    # ppi7: Electric iron
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 4)
+    #
+    # ppi8: Mobile phone
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 4)
+    #
+    # ppi9: Television
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0,
+              ifelse(data$ppi9 == "Only television (without cable)", 3, 7))
+    #
+    # ppi10: Bicycle, motorcycle or scooter/moped, or passenger car, pickup, van
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0,
+               ifelse(data$ppi10 == "Only bicycle (without any others)", 2,
+                 ifelse(data$ppi10 == "Car etc. (regardless of any others)", 16, 7)))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
@@ -1084,27 +1135,27 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
-  # Check if country is Guatemala
+  # Check if country is Haiti
   #
-  if(ccode == "GTM") {
+  if(ccode == "HTI") {
     #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
-  # Check if country is Guatemala
+  # Check if country is Honduras
   #
-  if(ccode == "GTM") {
+  if(ccode == "HND") {
     #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
-  # Check if country is Guatemala
+  # Check if country is India
   #
-  if(ccode == "GTM") {
+  if(ccode == "IND") {
     #
     # ppi: total score
     #
