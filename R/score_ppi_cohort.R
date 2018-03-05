@@ -1066,6 +1066,51 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
+  # Check if country is Guatemala
+  #
+  if(ccode == "GTM") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Guatemala
+  #
+  if(ccode == "GTM") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Guatemala
+  #
+  if(ccode == "GTM") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Guatemala
+  #
+  if(ccode == "GTM") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Guatemala
+  #
+  if(ccode == "GTM") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
   # Check if country is Kenya
   #
   if(ccode == "Kenya") {
