@@ -19,4 +19,3 @@ Imports: washdata,
     ppitables
 RoxygenNote: 6.0.1
 Suggests: testthat
-Remotes: github::validmeasures/ppitables
