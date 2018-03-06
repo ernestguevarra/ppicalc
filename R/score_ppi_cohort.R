@@ -1257,6 +1257,53 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "IND") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 41,
+              ifelse(data$ppi1 == "Two", 34,
+                ifelse(data$ppi1 == "Three", 26,
+                  ifelse(data$ppi1 == "Four", 19,
+                    ifelse(data$ppi1 == "Five", 11,
+                      ifelse(data$ppi1 == "Six", 7,
+                        ifelse(data$ppi1 == "Seven", 4, 0)))))))
+    #
+    # ppi2: Female education
+    #
+    ppi2 <- ifelse(data$ppi2 == "Primary or below, or not literate", 0,
+              ifelse(data$ppi2 == "Middle", 3, 5))
+    #
+    # ppi3: Refrigerator
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0, 11)
+    #
+    # ppi4: Stove
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0, 2)
+    #
+    # ppi5: Pressure cooker
+    #
+    ppi5 <- ifelse(data$ppi5 == "No", 0, 4)
+    #
+    # ppi6: television
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0, 5)
+    #
+    # ppi7: Electric fan
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 3)
+    #
+    # ppi8: Almirah
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 4)
+    #
+    # ppi9: chair
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 6)
+    #
+    # ppi10: motorcycle
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 19)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
