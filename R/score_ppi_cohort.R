@@ -933,7 +933,7 @@ score_ppi_cohort <- function(data, ccode) {
     #
     # ppi: total score
     #
-    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8
   }
   #
   # Check if country is Fiji
@@ -1130,14 +1130,123 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "HTI") {
     #
+    # ppi1: Department
+    #
+    ppi1 <- ifelse(data$ppi1 == "Nord, or Sud-Est", 10,
+              ifelse(data$ppi1 == "Artibonite, or Nippes", 7,
+                ifelse(data$ppi1 == "Nord-Ouest, or Sud", 4,
+                  ifelse(data$ppi1 == "Centre, or Nord-Est", 3, 0))))
+    #
+    # ppi2: Household members
+    #
+    ppi2 <- ifelse(data$ppi2 == "One, or two", 32,
+              ifelse(data$ppi2 == "Three", 18,
+                ifelse(data$ppi2 == "Four", 14,
+                  ifelse(data$ppi2 %in% c("Five", "Six"), 9,
+                    ifelse(data$ppi2 == "Seven", 4, 0)))))
+    #
+    # ppi3: Work
+    #
+    ppi3 <- ifelse(data$ppi3 == "None", 0,
+              ifelse(data$ppi3 == "One", 2, 4))
+    #
+    # ppi4: Female head worked?
+    #
+    ppi4 <- ifelse(data$ppi4 == "No", 0,
+              ifelse(data$ppi4 == "Yes", 4, 7))
+    #
+    # ppi5: Female head read and write
+    #
+    ppi5 <- ifelse(data$ppi5 == "Yes", 3, 0)
+    #
+    # ppi6: male head read and write
+    #
+    ppi6 <- ifelse(data$ppi6 == "Yes", 4,
+              ifelse(data$ppi6 == "No", 0, 2))
+    #
+    # ppi7: Roof material
+    #
+    ppi7 <- ifelse(data$ppi7 == "Cement/concrete, tile/slate, or other", 12,
+              ifelse(data$ppi7 == "Metal sheets, or plastic", 4, 0))
+    #
+    # ppi8: Source of water
+    #
+    ppi8 <- ifelse(data$ppi8 == "Well, private faucet/DINEPA, or treated water (kiosk, truck, bottle, bag, bucket, or jerrycan", 7, 0)
+    #
+    # ppi9: Fuel for cooking
+    #
+    ppi9 <- ifelse(data$ppi9 == "Wood/straw, or other", 0, 8)
+    #
+    # ppi10: Stove
+    #
+    ppi10 <- ifelse(data$pp10 == "No", 0, 6)
+    #
+    # ppi11: Radio
+    #
+    ppi11 <- ifelse(data$ppi11 == "No", 0, 7)
+    #
     # ppi: total score
     #
-    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10 + ppi11
   }
   #
   # Check if country is Honduras
   #
   if(ccode == "HND") {
+    #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 32,
+              ifelse(data$ppi1 == "One", 23,
+                ifelse(data$ppi1 == "Two", 16,
+                  ifelse(data$ppi1 == "Three", 14,
+                    ifelse(data$ppi1 == "Four", 11, 0)))))
+    #
+    # ppi2: Education
+    #
+    ppi2 <- ifelse(data$ppi2 == "Diversified or higher", 14,
+              ifelse(data$ppi2 == "No female head/spouse, common cycle, or no data", 10,
+                ifelse(data$ppi2 == "Primary school", 6, 0)))
+    #
+    # ppi3: Male head/spouse main occupation
+    #
+    ppi3 <- ifelse(data$ppi3 == "No data or no main occupation", 0,
+              ifelse(data$ppi3 == "Farmer, rancher, agricultural worker, or no male head/spouse", 9,
+                ifelse(data$ppi3 == "Shop owner, salesperson, service worker, transport and storage operator, or workers in textiles, construction, mechanics, graphics, chemicals, food processing, etc.", 11, 16)))
+    #
+    # ppi4: Salary
+    #
+    ppi4 <- ifelse(data$ppi4 == "None", 0,
+              ifelse(data$ppi4 == "One", 3, 10))
+    #
+    # ppi5: Rooms
+    #
+    ppi5 <- ifelse(data$ppi5 == "One", 0,
+              ifelse(data$ppi5 == "Two", 1,
+                ifelse(data$ppi5 == "Three", 4, 5)))
+    #
+    # ppi6: Floor material
+    #
+    ppi6 <- ifelse(data$ppi6 == "Dirt, other, or no data", 0,
+              ifelse(data$ppi6 == "Mud bricks, poured concrete, or wood", 3,
+                ifelse(data$ppi6 == "Cement bricks", 4, 7)))
+    #
+    # ppi7: Source of water
+    #
+    ppi7 <- ifelse(data$ppi7 == "Public network", 3, 0)
+    #
+    # ppi8: Refrigerator
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 4)
+    #
+    # ppi9: Stove
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 5)
+    #
+    # ppi10: Television
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0,
+               ifelse(data$ppi10 == "Yes, without cable", 2, 4))
     #
     # ppi: total score
     #
