@@ -1499,7 +1499,7 @@ score_ppi_cohort <- function(data, ccode) {
   #
   # Check if country is Kenya
   #
-  if(ccode == "Kenya") {
+  if(ccode == "KEN") {
     #
     # ppi1: How many members does the household have
     #
@@ -1567,9 +1567,18 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
   # Check if country is Madagascar
   #
-  if(ccode == "Madagascar") {
+  if(ccode == "MDG") {
     #
     # ppi1: How many members does the household have
     #
@@ -1632,9 +1641,54 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
+  # Check if country is Kyrgyzstan
+  #
+  if(ccode == "KGZ") {
+    #
+    # ppi: total score
+    #
+    ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
+  }
+  #
   # Check if country is Mozambique
   #
-  if(ccode == "Mozambique") {
+  if(ccode == "MOZ") {
     #
     # ppi1: How many members does the household have
     #
@@ -1697,7 +1751,7 @@ score_ppi_cohort <- function(data, ccode) {
   #
   # Check if country is Zambia
   #
-  if(ccode == "Zambia") {
+  if(ccode == "ZMB") {
     #
     # ppi1: How many members does the household have
     #
