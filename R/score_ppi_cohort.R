@@ -1436,6 +1436,62 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "JOR") {
     #
+    # ppi1: household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "Nine or more", 0,
+              ifelse(data$ppi1 == "Eight", 4,
+                ifelse(data$ppi1 == "Seven", 7,
+                  ifelse(data$ppi1 == "Six", 13,
+                    ifelse(data$ppi1 == "Five", 15,
+                      ifelse(data$ppi1 == "Four", 23,
+                        ifelse(data$ppi1 == "Three", 30, 38)))))))
+    #
+    # ppi2: Work
+    #
+    ppi2 <- ifelse(data$ppi2 == "None", 0,
+              ifelse(data$ppi2 == "One", 1,
+                ifelse(data$ppi2 == "Two", 2, 3)))
+    #
+    # ppi3: Work - legislator...
+    #
+    ppi3 <- ifelse(data$ppi3 == "No", 0, 3)
+    #
+    # ppi4: Rooms
+    #
+    ppi4 <- ifelse(data$ppi4 == "One or two", 0,
+              ifelse(data$ppi4 == "Three", 6,
+                ifelse(data$ppi4 == "Four", 7,
+                  ifelse(data$ppi4 == "Five", 11, 18))))
+    #
+    # ppi5: Gas stove with oven
+    #
+    ppi5 <- ifelse(data$ppi5 == "No", 0, 3)
+    #
+    # ppi6: Vacuum cleaner
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0, 3)
+    #
+    # ppi7: Air conditioner
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 5)
+    #
+    # ppi8: Computer connected to the internet
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0,
+              ifelse(data$ppi8 == "Only computer", 3, 6))
+    #
+    # ppi9: Landline or mobile phone
+    #
+    ppi9 <- ifelse(data$ppi9 == "None", 0,
+              ifelse(data$ppi9 == "One mobile, but no land-lines", 6,
+                ifelse(data$ppi9 == "One or more land-lines, but no mobile", 7,
+                  ifelse(data$ppi9 == "One or more landlines, and one mobile", 8,
+                    ifelse(data$ppi9 == "Two or more mobiles, but no land-lines", 10, 15)))))
+    #
+    # ppi10: Private car
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 6)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
