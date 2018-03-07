@@ -1313,6 +1313,56 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "IDN") {
     #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One", 37,
+              ifelse(data$ppi1 == "Two", 24,
+                ifelse(data$ppi1 == "Three", 18,
+                  ifelse(data$ppi1 == "Four", 11,
+                    ifelse(data$ppi1 == "Five", 5, 0)))))
+    #
+    # ppi2: school
+    #
+    ppi2 <- ifelse(data$ppi2 == "Yes", 2, 0)
+    #
+    # ppi3: Female head education
+    #
+    ppi3 <- ifelse(data$ppi3 == "None", 0,
+              ifelse(data$ppi3 == "Grade school (incl. disabled, Islamic, or non-formal", 3,
+                ifelse(data$ppi3 == "High school (incl. disabled, Islamic, or non-formal", 6,
+                  ifelse(data$ppi3 == "Diploma (one-year or higher), or higher", 18, 4))))
+    #
+    # ppi4: Male head employment
+    #
+    ppi4 <- ifelse(data$ppi4 == "Self-employed", 1,
+              ifelse(data$ppi4 == "Business owner with some permanent or paid workers", 6,
+                ifesle(data$ppi4 )))
+    #
+    # ppi5: Floor material
+    #
+    ppi5 <- ifelse(data$ppi5 == "Others", 5, 0)
+    #
+    # ppi6: Toilet
+    #
+    ppi6 <- ifelse(data$ppi6 == "Flush", 4,
+              ifelse(data$ppi6 == "Non-flush to a septic tank", 1, 0))
+    #
+    # ppi7: Cooking fuel
+    #
+    ppi7 <- ifelse(data$ppi7 == "Firewood, charcoal, or coal", 0, 5)
+    #
+    # ppi8: Gas cylinder
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 6)
+    #
+    # ppi9: Refrigerator or freezer
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 8)
+    #
+    # ppi10: motorcycle, scooter or motorized boat
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 9)
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
