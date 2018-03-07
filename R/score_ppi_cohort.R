@@ -1571,6 +1571,65 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "KGZ") {
     #
+    # ppi1: oblast
+    #
+    ppi1 <- ifelse(data$ppi1 == "Jalal-Abad", 0,
+              ifelse(data$ppi1 == "Naryn", 1,
+                ifelse(data$ppi1 == "Osh", 2,
+                  ifelse(data$ppi1 == "Bishkek", 5,
+                    ifelse(data$ppi1 == "Issykul", 6,
+                      ifelse(data$ppi1 == "Talas", 7,
+                        ifelse(data$ppi1 == "Chui", 8, 11)))))))
+    #
+    # ppi2: household members
+    #
+    ppi2 <- ifelse(data$ppi2 == "Seven or more", 0,
+              ifelse(data$ppi2 == "Six", 7,
+                ifelse(data$ppi2 == "Five", 13,
+                  ifelse(data$ppi2 == "Four", 19,
+                    ifelse(data$ppi2 == "Three", 27,
+                      ifelse(data$ppi2 == "Two", 35, 100))))))
+    #
+    # ppi3: Work
+    #
+    ppi3 <- ifelse(data$ppi3 == "None, or one", 0,
+              ifelse(data$ppi3 == "Two", 2, 5))
+    #
+    # ppi4: Wages
+    #
+    ppi4 <- ifelse(data$ppi4 == "None", 0,
+              ifelse(data$ppi4 == "One", 3, 4))
+    #
+    # ppi5: Source of water
+    #
+    ppi5 <- ifelse(data$ppi5 == "Well, or aqueduct (running water)", 8,
+              ifelse(data$ppi5 == "Private water pump", 3,
+                ifelse(data$ppi5 == "Artesian well", 2, 0)))
+    #
+    # ppi6: Washing machines
+    #
+    ppi6 <- ifelse(data$ppi6 == "No", 0,
+              ifelse(data$ppi6 == "Regular (but not automatic)", 4, 7))
+    #
+    # ppi7: Electric heaters
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 4)
+    #
+    # ppi8: cellular telephones
+    #
+    ppi8 <- ifelse(data$ppi8 == "None, or one", 0,
+              ifelse(data$ppi8 == "Two", 4, 9))
+    #
+    # ppi9: Bicycles...
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0,
+              ifelse(data$ppi9 == "Only bicycle", 1, 7))
+    #
+    # ppi10: plots
+    #
+    ppi10 <- ifelse(data$ppi10 == "No plot (regardless of animals)", 0,
+               ifelse(data$ppi10 == "Has a plot, but no animals", 2, 9))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
