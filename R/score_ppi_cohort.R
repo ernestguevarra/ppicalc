@@ -1372,6 +1372,61 @@ score_ppi_cohort <- function(data, ccode) {
   #
   if(ccode == "CIV") {
     #
+    # ppi1: household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "One or two", 36,
+              ifelse(data$ppi1 == "Three", 25,
+                ifelse(data$ppi1 == "Four", 20,
+                  ifelse(data$ppi1 == "Five or six", 12,
+                    ifelse(data$ppi1 == "Seven or eight", 8, 0)))))
+    #
+    # ppi2: attending school
+    #
+    ppi2 <- ifelse(data$ppi2 == "No", 0, 4)
+    #
+    # ppi3: Male head read and write in French/Arabic/local language
+    #
+    ppi3 <- ifelse(data$ppi3 == "Yes", 4,
+              ifelse(data$ppi3 == "No", 1, 0))
+    #
+    # ppi4: Floor material
+    #
+    ppi4 <- ifelse(data$ppi4 == "Tile, or other", 9,
+              ifelse(data$ppi4 == "Cement", 2, 0))
+    #
+    # ppi5: Water source
+    #
+    ppi5 <- ifelse(data$ppi5 == "Water vendor", 7,
+              ifelse(data$ppi5 == "Private tap", 6,
+                ifelse(data$ppi5 == "Shared tap", 4,
+                  ifelse(data$ppi5 == "Well", 2,
+                    ifelse(data$ppi5 == "Surface water, or HVA (improved village pump)", 1, 0)))))
+    #
+    # ppi6: Toilet
+    #
+    ppi6 <- ifelse(data$ppi6 == "None", 0, 2)
+    #
+    # ppi7: Cooking fuel
+    #
+    ppi7 <- ifelse(data$ppi7 == "LPG", 12,
+              ifelse(data$ppi7 == "Does not cook", 0,
+                ifelse(data$ppi7 == "Collect firewood", 3, 6)))
+    #
+    # ppi8: Fans
+    #
+    ppi8 <- ifelse(data$ppi8 == "None", 0,
+              ifelse(data$ppi8 == "One", 4, 9))
+    #
+    # ppi9: Radio, television, VCR/DVD player
+    #
+    ppi9 <- ifelse(data$ppi9 == "None", 0,
+              ifelse(data$ppi9 == "Only radio and/or television (without VCR/DVD and without satellite dish)", 3, 7))
+    #
+    # ppi10: Cellular phones
+    #
+    ppi10 <- ifelse(data$ppi10 == "None", 0,
+               ifelse(data$ppi10 == "One", 6, 10))
+    #
     # ppi: total score
     #
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
