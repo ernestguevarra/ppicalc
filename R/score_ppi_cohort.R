@@ -1815,7 +1815,10 @@ score_ppi_cohort <- function(data, ccode) {
   #
   # Check if country is Kyrgyzstan
   #
-  if(ccode == "KGZ") {
+  if(ccode == "MEX") {
+    #
+    # ppi1:
+    #
     #
     # ppi: total score
     #
