@@ -1700,9 +1700,57 @@ score_ppi_cohort <- function(data, ccode) {
     ppi <- ppi1 + ppi2 + ppi3 + ppi4 + ppi5 + ppi6 + ppi7 + ppi8 + ppi9 + ppi10
   }
   #
-  # Check if country is Kyrgyzstan
+  # Check if country is Malawi
   #
-  if(ccode == "KGZ") {
+  if(ccode == "MWI") {
+    #
+    # ppi1: Household members
+    #
+    ppi1 <- ifelse(data$ppi1 == "Seven or more", 0,
+              ifelse(data$ppi1 == "Six", 4,
+                ifelse(data$ppi1 == "Five", 10,
+                  ifelse(data$ppi1 == "Four", 15, 31))))
+    #
+    # ppi2: female head/spouse read and write
+    #
+    ppi2 <- ifelse(data$ppi2 == "No", 0,
+              ifelse(data$ppi2 == "Yes, only Chichewa", 4,
+                ifelse(data$ppi2 == "Yes, English (regardless of Chichewa)", 8, 13)))
+    #
+    # ppi3: floor
+    #
+    ppi3 <- ifelse(data$ppi3 == "Smoothed mud, or sand", 0, 8)
+    #
+    # ppi4: Walls
+    #
+    ppi4 <- ifelse(data$ppi4 == "Mud (yomata), or grass", 0,
+              ifelse(data$ppi4 == "Mud brick (unfired)", 5, 8))
+    #
+    # ppi5: Roof
+    #
+    ppi5 <- ifelse(data$ppi5 == "Grass, plastic sheeting, or other", 0, 3)
+    #
+    # ppi6: Toilet
+    #
+    ppi6 <- ifelse(data$ppi6 == "None, traditional latrine without roof shared with other households, or other", 0,
+              ifelse(data$ppi6 == "Traditional latrine with roof only for household members, VIP latrine, or flush toilet", 6, 4))
+    #
+    # ppi7: lighting fuel
+    #
+    ppi7 <- ifelse(data$ppi7 == "Collected firewood, purchased firewood, grass, or gas", 0,
+              ifelse(data$ppi7 == "Paraffin, or other", 8, 13))
+    #
+    # ppi8: Bed net
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 5)
+    #
+    # ppi9: Tables
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 9)
+    #
+    # ppi10: Beds
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 4)
     #
     # ppi: total score
     #
@@ -1711,7 +1759,54 @@ score_ppi_cohort <- function(data, ccode) {
   #
   # Check if country is Kyrgyzstan
   #
-  if(ccode == "KGZ") {
+  if(ccode == "MLI") {
+    #
+    #  ppi1: household members 11 years
+    #
+    ppi1 <- ifelse(data$ppi1 == "None", 25,
+              ifelse(data$ppi1 == "One", 17,
+                ifelse(data$ppi1 == "Two", 15,
+                  ifelse(data$ppi1 == "Three", 13,
+                    ifelse(data$ppi1 == "Four", 10, 0)))))
+    #
+    # ppi2: household members who work
+    #
+    ppi2 <- ifelse(data$ppi2 == "Three or more", 0,
+              ifelse(data$ppi2 == "Two", 7, 14))
+    #
+    # ppi3: Roof
+    #
+    ppi3 <- ifelse(data$ppi3 == "Tile or thatch", 0, 12)
+    #
+    # ppi4: Walls
+    #
+    ppi4 <- ifelse(data$ppi4 == "Cement", 7, 0)
+    #
+    # ppi5: Drinking water
+    #
+    ppi5 <- ifelse(data$ppi5 == "Faucet tap", 11,
+              ifelse(data$ppi5 == "Public pump", 6,
+                ifelse(data$ppi5 == "Modern well", 3, 0)))
+    #
+    # ppi6: Toilet
+    #
+    ppi6 <- ifelse(data$ppi6 == "Others", 0, 7)
+    #
+    # ppi7: TV
+    #
+    ppi7 <- ifelse(data$ppi7 == "No", 0, 6)
+    #
+    #  ppi8: Radio
+    #
+    ppi8 <- ifelse(data$ppi8 == "No", 0, 7)
+    #
+    # ppi9: Irons
+    #
+    ppi9 <- ifelse(data$ppi9 == "No", 0, 5)
+    #
+    # ppi10: Motorbikes
+    #
+    ppi10 <- ifelse(data$ppi10 == "No", 0, 6)
     #
     # ppi: total score
     #
