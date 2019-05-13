@@ -7,13 +7,13 @@
 has not yet been a stable, usable release suitable for the
 public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![CRAN](https://img.shields.io/cran/v/ppicalc.svg)](https://CRAN.R-project.org/package=ppicalc)
-[![CRAN](https://img.shields.io/cran/l/ppicalc.svg)](https://github.com/validmeasures/ppicalc/blob/master/LICENSE.md)
+[![CRAN](https://img.shields.io/cran/l/ppicalc.svg)](https://github.com/ernestguevarra/ppicalc/blob/master/LICENSE.md)
 [![CRAN](http://cranlogs.r-pkg.org/badges/ppicalc)](https://CRAN.R-project.org/package=ppicalc)
 [![Travis-CI Build
-Status](https://travis-ci.org/validmeasures/ppicalc.svg?branch=master)](https://travis-ci.org/validmeasures/ppicalc)
+Status](https://travis-ci.org/ernestguevarra/ppicalc.svg?branch=master)](https://travis-ci.org/ernestguevarra/ppicalc)
 [![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/ppicalc?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/ppicalc)
-[![codecov](https://codecov.io/gh/validmeasures/ppicalc/branch/master/graph/badge.svg)](https://codecov.io/gh/validmeasures/ppicalc)
+Status](https://ci.appveyor.com/api/projects/status/github/ernestguevarra/ppicalc?branch=master&svg=true)](https://ci.appveyor.com/project/ernestguevarra/ppicalc)
+[![codecov](https://codecov.io/gh/ernestguevarra/ppicalc/branch/master/graph/badge.svg)](https://codecov.io/gh/ernestguevarra/ppicalc)
 
 Given `Poverty Probability Index (PPI)` scores based on the standard 10
 questions on household’s characteristics and asset ownership, the
