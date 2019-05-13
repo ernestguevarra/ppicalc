@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' quintile_ppi_cohort
-#'
 #' Group population by quintiles based on their multiple poverty probabilities
 #'
 #' @param ppi A data frame of poverty probabilities or likelihoods.

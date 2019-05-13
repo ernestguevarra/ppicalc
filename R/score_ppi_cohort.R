@@ -1,6 +1,7 @@
 ################################################################################
 #
-#' score_ppi_cohort
+#' Get a cohort or sample of households' poverty probability score based on
+#' their responses to the ten country-specific questions.
 #'
 #' @param data A data frame containing responses to the 10 questions used to
 #'     elicit information for calculating the PPI score
@@ -1336,7 +1337,7 @@ score_ppi_cohort <- function(data, ccode) {
     #
     ppi4 <- ifelse(data$ppi4 == "Self-employed", 1,
               ifelse(data$ppi4 == "Business owner with some permanent or paid workers", 6,
-                ifesle(data$ppi4 )))
+                ifelse(data$ppi4 )))
     #
     # ppi5: Floor material
     #

@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' quintile_ppi
-#'
 #' Group population by quintiles based on their poverty probability
 #'
 #' @param ppi A numeric vector of poverty probabilities or likelihoods.

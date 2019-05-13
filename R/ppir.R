@@ -17,7 +17,7 @@
 #'
 #
 ################################################################################
-
+NULL
 
 ## quiets concerns of R CMD check re: the psus and THRESHOLD that appear in bbw
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("score", "pQuintile"))

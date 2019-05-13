@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' score_ppi
-#'
 #' Given country-specific survey data with information on the ten questions on
 #' which PPI scores are based on, recode the data accordingly and calculate
 #' the corresponding PPI score

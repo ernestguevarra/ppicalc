@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' get_ppi_cohort
-#'
 #' Get a cohort or sample of households' poverty probability based on each
 #' household's Poverty Probability Index (PPI) score. This function uses PPI
 #' lookup tables for 60 countries available via the \code{ppitables} package.
@@ -10,8 +8,8 @@
 #' @param ppiTable Name of country PPI table to use from the \code{ppitables}
 #'     package
 #'
-#' @return A data frame of households' poverty probabilities based on various poverty
-#'     metrics
+#' @return A data frame of households' poverty probabilities based on various
+#'     poverty metrics
 #'
 #' @examples
 #' # Apply function on a dataset from Bangladesh that includes PPI scores from

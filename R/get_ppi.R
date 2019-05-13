@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' get_ppi
-#'
 #' Get a household's poverty probability based on their Poverty Probability
 #' Index (PPI) score. This function uses PPI lookup tables for 60 countries
 #' available via the \code{ppitables} package.
