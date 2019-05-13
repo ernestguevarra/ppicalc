@@ -6,3 +6,4 @@
 ^README-.*\.png$
 ^appveyor\.yml$
 ^LICENSE\.md$
+^codecov\.yml$
