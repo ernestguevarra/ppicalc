@@ -2,7 +2,9 @@
 % Please edit documentation in R/get_ppi.R
 \name{get_ppi}
 \alias{get_ppi}
-\title{get_ppi}
+\title{Get a household's poverty probability based on their Poverty Probability
+Index (PPI) score. This function uses PPI lookup tables for 60 countries
+available via the \code{ppitables} package.}
 \usage{
 get_ppi(index, ppiTable)
 }

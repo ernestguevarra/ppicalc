@@ -2,7 +2,9 @@
 % Please edit documentation in R/get_ppi_cohort.R
 \name{get_ppi_cohort}
 \alias{get_ppi_cohort}
-\title{get_ppi_cohort}
+\title{Get a cohort or sample of households' poverty probability based on each
+household's Poverty Probability Index (PPI) score. This function uses PPI
+lookup tables for 60 countries available via the \code{ppitables} package.}
 \usage{
 get_ppi_cohort(index, ppiTable)
 }
@@ -13,8 +15,8 @@ get_ppi_cohort(index, ppiTable)
 package}
 }
 \value{
-A data frame of households' poverty probabilities based on various poverty
-    metrics
+A data frame of households' poverty probabilities based on various
+    poverty metrics
 }
 \description{
 Get a cohort or sample of households' poverty probability based on each
