@@ -2,7 +2,9 @@
 % Please edit documentation in R/score_ppi.R
 \name{score_ppi}
 \alias{score_ppi}
-\title{score_ppi}
+\title{Given country-specific survey data with information on the ten questions on
+which PPI scores are based on, recode the data accordingly and calculate
+the corresponding PPI score}
 \usage{
 score_ppi(ccode)
 }

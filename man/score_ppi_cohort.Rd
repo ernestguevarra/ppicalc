@@ -2,7 +2,8 @@
 % Please edit documentation in R/score_ppi_cohort.R
 \name{score_ppi_cohort}
 \alias{score_ppi_cohort}
-\title{score_ppi_cohort}
+\title{Get a cohort or sample of households' poverty probability score based on
+their responses to the ten country-specific questions.}
 \usage{
 score_ppi_cohort(data, ccode)
 }
@@ -16,7 +17,8 @@ elicit information for calculating the PPI score}
 A numeric vector of PPI scores for each household
 }
 \description{
-score_ppi_cohort
+Get a cohort or sample of households' poverty probability score based on
+their responses to the ten country-specific questions.
 }
 \examples{
 #

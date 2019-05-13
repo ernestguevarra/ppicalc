@@ -2,7 +2,7 @@
 % Please edit documentation in R/quintile_ppi.R
 \name{quintile_ppi}
 \alias{quintile_ppi}
-\title{quintile_ppi}
+\title{Group population by quintiles based on their poverty probability}
 \usage{
 quintile_ppi(ppi, probs = c(0.2, 0.4, 0.6, 0.8, 1))
 }

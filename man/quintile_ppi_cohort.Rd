@@ -2,7 +2,7 @@
 % Please edit documentation in R/quintile_ppi_cohort.R
 \name{quintile_ppi_cohort}
 \alias{quintile_ppi_cohort}
-\title{quintile_ppi_cohort}
+\title{Group population by quintiles based on their multiple poverty probabilities}
 \usage{
 quintile_ppi_cohort(ppi, probs = c(0.2, 0.4, 0.6, 0.8, 1))
 }
