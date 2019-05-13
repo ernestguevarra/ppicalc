@@ -20,7 +20,7 @@ questions on household’s characteristics and asset ownership, the
 likelihood that the household is living below the poverty line can be
 determined using this package. This package depends on country-specific
 lookup tables developed for the `PPI` available via the [`ppitables`
-package](https://github.com/validmeasures/ppitables).
+package](https://github.com/ernestguevarra/ppitables).
 
 ## Installation
 
@@ -28,7 +28,7 @@ You can install `ppicalc` from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("validmeasures/ppicalc")
+devtools::install_github("ernestguevarra/ppicalc")
 ```
 
 ## Usage

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ernestguevarra/ppicalc?branch=master&svg=true)](https://ci.appveyor.com/project/ernestguevarra/ppicalc)
 [![codecov](https://codecov.io/gh/ernestguevarra/ppicalc/branch/master/graph/badge.svg)](https://codecov.io/gh/ernestguevarra/ppicalc)
 
-Given `Poverty Probability Index (PPI)` scores based on the standard 10 questions on household’s characteristics and asset ownership, the likelihood that the household is living below the poverty line can be determined using this package. This package depends on country-specific lookup tables developed for the `PPI` available via the [`ppitables` package](https://github.com/validmeasures/ppitables).
+Given `Poverty Probability Index (PPI)` scores based on the standard 10 questions on household’s characteristics and asset ownership, the likelihood that the household is living below the poverty line can be determined using this package. This package depends on country-specific lookup tables developed for the `PPI` available via the [`ppitables` package](https://github.com/ernestguevarra/ppitables).
 
 ## Installation
 
@@ -29,7 +29,7 @@ You can install `ppicalc` from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("validmeasures/ppicalc")
+devtools::install_github("ernestguevarra/ppicalc")
 ```
 
 ## Usage
