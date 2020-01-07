@@ -3,7 +3,6 @@
 \docType{package}
 \name{ppicalc}
 \alias{ppicalc}
-\alias{ppicalc-package}
 \title{ppicalc}
 \description{
 The Poverty Probability Index (PPI) is a poverty measurement tool
@@ -14,3 +13,4 @@ these PPI scores, the likelihood that the household is living below the poverty
 line can be determined using this package. This package depends on country-specific
 lookup tables developed for the PPI available via the \code{ppitables} package.
 }
+\keyword{internal}
