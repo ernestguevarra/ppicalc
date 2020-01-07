@@ -9,9 +9,7 @@
 #'   analysis and collection tool
 #'
 #' @examples
-#' \dontrun{
-#'   get_data_col(path = "colombia.xlsx)
-#' }
+#' get_data_col(path = paste(system.file("ppi", package = "ppicalc"), "colombia.xlsx", sep = "/"))
 #'
 #' @export
 #'
@@ -42,9 +40,8 @@ get_data_col <- function(path) {
 #' @return A dataframe of PPI for each household in \code{df}.
 #'
 #' @examples
-#' \dontrun{
-#'   ppi_col_ipa(df = get_data_col(path = "colombia.xlsx"))
-#' }
+#' ppi_col_ipa(path = paste(system.file("ppi", package = "ppicalc"),
+#'                          "colombia.xlsx", sep = "/"))
 #'
 #' @export
 #'
