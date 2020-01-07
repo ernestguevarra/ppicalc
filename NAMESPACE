@@ -2,6 +2,7 @@
 
 export(calculate_ppi)
 export(get_data_col)
+export(get_poverty_class)
 export(get_ppi)
 export(get_ppi_cohort)
 export(ppi_col_ipa)
