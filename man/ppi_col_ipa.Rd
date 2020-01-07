@@ -26,8 +26,7 @@ Function to calculate Poverty Probability Index (PPI) for Colombia using
 IPA's new PPI methodology
 }
 \examples{
-\dontrun{
-  ppi_col_ipa(df = get_data_col(path = "colombia.xlsx"))
-}
+ppi_col_ipa(path = paste(system.file("ppi", package = "ppicalc"),
+                         "colombia.xlsx", sep = "/"))
 
 }

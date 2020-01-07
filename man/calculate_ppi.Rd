@@ -25,6 +25,4 @@ Function to calculate Poverty Probability Index (PPI) for Kenya
 \examples{
 #calculate_ppi(df = household)
 
-
-
 }

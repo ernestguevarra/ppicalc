@@ -17,3 +17,7 @@ A dataframe of household data based on IPA's Colombia PPI data
 \description{
 Get Colombia PPI data from IPA's data analysis and collection tool
 }
+\examples{
+get_data_col(path = paste(system.file("ppi", package = "ppicalc"), "colombia.xlsx", sep = "/"))
+
+}
