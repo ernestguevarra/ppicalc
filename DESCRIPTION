@@ -11,8 +11,10 @@ Description: Given Poverty Probability Index (PPI) scores based on the standard
     determined using this package. This package depends on country-specific
     lookup tables developed for the PPI available via the ppitables package.
 License: MIT + file LICENSE
-Imports: washdata,
-    ppitables
+Imports: bbw,
+    washdata,
+    ppitables,
+    openxlsx
 Suggests: 
     testthat,
     covr
@@ -20,4 +22,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/ernestguevarra/ppicalc
 BugReports: https://github.com/ernestguevarra/ppicalc/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
