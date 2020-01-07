@@ -12,6 +12,7 @@
 #'
 #' @docType package
 #' @name ppicalc
+#' @keywords internal
 #' @importFrom utils menu
 #' @importFrom stats quantile
 #'
