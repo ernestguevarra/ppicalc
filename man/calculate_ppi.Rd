@@ -4,17 +4,21 @@
 \alias{calculate_ppi}
 \title{Function to calculate Poverty Probability Index (PPI) for Kenya}
 \usage{
-calculate_ppi(
-  df,
-  category = c("nl100", "nlFood", "nl150", "nl200", "ppp100", "ppp190", "ppp320",
-    "ppp550", "ppp800", "ppp125", "ppp250", "ppp500", "percentile20", "percentile40",
-    "percentile60", "percentile80")
-)
+calculate_ppi(path, ccode, category = get_poverty_class(ccode = ccode))
 }
 \arguments{
-\item{df}{Dataframe containing PPI indicator variables for each household.}
+\item{path}{Directory path to IPA's country-specific PPI data analysis and
+collection XLSX file}
 
-\item{category}{Poverty classifications.}
+\item{ccode}{A character value for three letter ISO code for country to
+calculate PPI for. Currently, 12 countries are supported by this function:
+1) Colombia (COL); 2) Ivory Coast (CIV); 3) Dominican Republic (DOM);
+4) Ghana (GHA); 5) Kenya (KEN); 6) Mozambique (MOZ); 7) Myanmar (MMR);
+8) Peru (PER); 9) Philippines (PHL); 10) Rwanda (RWA); 11) Senegal (SEN);
+12) Togo (TGO)}
+
+\item{category}{Poverty classifications. This defaults to all the poverty
+classifications available for the selected country}
 }
 \value{
 A dataframe of PPI for each household in \code{df}.
@@ -23,6 +27,8 @@ A dataframe of PPI for each household in \code{df}.
 Function to calculate Poverty Probability Index (PPI) for Kenya
 }
 \examples{
-#calculate_ppi(df = household)
+calculate_ppi(path = paste(system.file("ppi", package = "ppicalc"),
+                           "colombia.xlsx", sep = "/"),
+              ccode = "COL")
 
 }
