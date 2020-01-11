@@ -18,8 +18,6 @@ A dataframe of household data based on IPA's Ivory Coast PPI data
 Get Ivory Coast PPI data from IPA's data analysis and collection tool
 }
 \examples{
-\dontrun{
-  get_data_col(path = paste(system.file("ppi", package = "ppicalc"), "ivoryCoast.xlsx", sep = "/"))
-}
+get_data_civ(path = paste(system.file("ppi", package = "ppicalc"), "ivoryCoast.xlsx", sep = "/"))
 
 }
