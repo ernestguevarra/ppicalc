@@ -9,4 +9,4 @@
 ^codecov\.yml$
 ^_pkgdown\.yml$
 ^docs$
-^~$ivoryCoast\.xlsx$
+^ppi/~$ivoryCoast\.xlsx$
