@@ -3,6 +3,7 @@
 \docType{package}
 \name{ppicalc}
 \alias{ppicalc}
+\alias{ppicalc-package}
 \title{ppicalc}
 \description{
 The Poverty Probability Index (PPI) is a poverty measurement tool
@@ -12,5 +13,17 @@ a household’s characteristics and asset ownership are scored and then given
 these PPI scores, the likelihood that the household is living below the poverty
 line can be determined using this package. This package depends on country-specific
 lookup tables developed for the PPI available via the \code{ppitables} package.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ernestguevarra/ppicalc}
+  \item Report bugs at \url{https://github.com/ernestguevarra/ppicalc/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (\href{https://orcid.org/0000-0002-4887-4415}{ORCID})
+
 }
 \keyword{internal}
