@@ -1,27 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/index.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/index.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/get_ppi.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/calculate_ppi.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/get_ppi_cohort.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/get_data_civ.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/ppicalc.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/get_data_col.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/quintile_ppi.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/get_poverty_class.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/quintile_ppi_cohort.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/get_ppi.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/score_ppi.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/get_ppi_cohort.html</loc>
   </url>
   <url>
-    <loc>https://ernest.guevarra.io/ppitables/reference/score_ppi_cohort.html</loc>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/ppi_civ_ipa.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/ppi_col_ipa.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/ppicalc.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/quintile_ppi.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/quintile_ppi_cohort.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreCIV2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreCOL2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreDOM2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreGHA2019.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreKEN2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreMMR2019.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreMOZ2019.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scorePER2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scorePHL2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreRWA2019.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreSEN2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/scoreTGO2018.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/score_ppi.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/ppicalc/reference/score_ppi_cohort.html</loc>
   </url>
 </urlset>
