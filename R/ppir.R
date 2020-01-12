@@ -1,7 +1,5 @@
 ################################################################################
 #
-#' ppicalc
-#'
 #' The Poverty Probability Index (PPI) is a poverty measurement tool
 #' for organizations and businesses with a mission to serve the poor. The PPI
 #' is statistically-sound, yet simple to use: the answers to 10 questions about
@@ -18,7 +16,7 @@
 #'
 #
 ################################################################################
-NULL
+"_PACKAGE"
 
 ## quiets concerns of R CMD check re: the psus and THRESHOLD that appear in bbw
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("score", "pQuintile"))
