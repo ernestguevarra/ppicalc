@@ -57,3 +57,19 @@ reference:
   contents:
   - quintile_ppi
   - quintile_ppi_cohort
+
+- title: Datasets
+  contents:
+  - scoreCOL2018
+  - scoreCIV2018
+  - scoreDOM2018
+  - scoreGHA2019
+  - scoreKEN2018
+  - scoreMMR2019
+  - scoreMOZ2019
+  - scorePER2018
+  - scorePHL2018
+  - scoreRWA2019
+  - scoreSEN2018
+  - scoreTGO2018
+
